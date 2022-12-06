@@ -1,6 +1,6 @@
 # What is this?
 
-This is an author block based on the one used in the Journalism Bootcam's feature stories ([example](https://journalism.csis.org/from-grocery-store-to-landfill-addressing-food-waste-at-the-household-level/)).
+This is an author block based on the one used in the Journalism Bootcamp's feature stories ([example](https://journalism.csis.org/from-grocery-store-to-landfill-addressing-food-waste-at-the-household-level/)).
 
 # How do I use it?
 
