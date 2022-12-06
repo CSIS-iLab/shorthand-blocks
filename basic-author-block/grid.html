@@ -1,0 +1,309 @@
+<style>
+  .card {
+    color: white;
+    padding: 1rem;
+  }
+
+  .cards {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    word-wrap: break-word;
+  }
+
+  .card:hover a {
+    color: #3dd5ff;
+    border-color: #3dd5ff;
+  }
+
+  .card:hover .image-container {
+    background-color: #3dd5ff;
+  }
+
+  .image-container {
+    margin-bottom: 1em;
+    background: #0065a4;
+    max-width: 224px;
+    transition: 0.3s;
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin-bottom: -1em;
+    position: relative;
+    right: -0.5em;
+    top: -0.5em;
+  }
+
+  .name {
+    display: inline;
+    font-size: 1em;
+    font-family: "utopia-std", serif;
+    font-weight: 300;
+    color: #0054a4;
+    text-decoration: none;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    line-height: 1.3;
+    transition: color 0.3s linear;
+    border-bottom: 2px solid transparent;
+  }
+
+  #description1 {
+    display: inline;
+    color: black;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    font-size: 0.8em;
+    line-height: 1.3;
+    font-family: "utopia-std", serif;
+    font-weight: 500;
+  }
+
+  #description2 {
+    display: inline;
+    color: black;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    font-size: 0.8em;
+    line-height: 1.3;
+    font-family: "utopia-std", serif;
+    font-weight: 500;
+  }
+
+  #description3 {
+    display: inline;
+    color: black;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    font-size: 0.8em;
+    line-height: 1.3;
+    font-family: "utopia-std", serif;
+    font-weight: 500;
+  }
+
+  #description4 {
+    display: inline;
+    color: black;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    font-size: 0.8em;
+    line-height: 1.3;
+    font-family: "utopia-std", serif;
+    font-weight: 500;
+  }
+
+  #description5 {
+    display: inline;
+    color: black;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    font-size: 0.8em;
+    line-height: 1.3;
+    font-family: "utopia-std", serif;
+    font-weight: 500;
+  }
+
+  #description6 {
+    display: inline;
+    color: black;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    font-size: 0.8em;
+    line-height: 1.3;
+    font-family: "utopia-std", serif;
+    font-weight: 500;
+  }
+
+  #description7 {
+    display: inline;
+    color: black;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    font-size: 0.8em;
+    line-height: 1.3;
+    font-family: "utopia-std", serif;
+    font-weight: 500;
+  }
+
+  #description8 {
+    display: inline;
+    color: black;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    font-size: 0.8em;
+    line-height: 1.3;
+    font-family: "utopia-std", serif;
+    font-weight: 500;
+  }
+</style>
+
+<!--<link rel="stylesheet" href="style.css" />-->
+<div class="cards">
+  <!-- card 1 - Emily Harding -->
+  <div class="card">
+    <div class="image-container">
+      <a href="https://www.csis.org/people/emily-harding">
+        <img
+          src="https://res.cloudinary.com/csisideaslab/image/upload/v1655839649/Shorthand/Never%20Trust%20Always%20Verify/5Harding_1.jpg"
+          alt="Emily Harding headshot"
+        />
+      </a>
+    </div>
+    <a class="name" href="https://www.csis.org/people/emily-harding"
+      >Emily Harding</a
+    >
+    <br />
+    <p id="description1">
+      Deputy Director and Senior Fellow, International Security Program
+    </p>
+  </div>
+  <!-- card 2 - James Andrew Lewis -->
+  <div class="card">
+    <div class="image-container">
+      <a href="https://www.csis.org/people/james-andrew-lewis">
+        <img
+          src="https://res.cloudinary.com/csisideaslab/image/upload/v1655839647/Shorthand/Never%20Trust%20Always%20Verify/5Lewis_2.jpg"
+          alt="James Andrew Lewis headshot"
+        />
+      </a>
+    </div>
+    <div class="content">
+      <a class="name" href="https://www.csis.org/people/james-andrew-lewis"
+        >James Andrew Lewis</a
+      >
+      <br />
+      <p id="description2">
+        Senior Vice President and Director, Strategic Technologies Program
+      </p>
+    </div>
+  </div>
+  <!-- card 3 - Suzanne Spaulding -->
+  <div class="card">
+    <div class="image-container">
+      <a href="https://www.csis.org/people/suzanne-spaulding">
+        <img
+          src="https://res.cloudinary.com/csisideaslab/image/upload/v1655839647/Shorthand/Never%20Trust%20Always%20Verify/5Spaulding_0.jpg"
+          alt="Suzanne Spaulding headshot"
+        />
+      </a>
+    </div>
+    <div class="content">
+      <a class="name" href="https://www.csis.org/people/suzanne-spaulding"
+        >Suzanne Spaulding
+      </a>
+      <br />
+      <p id="description3">
+        Senior Adviser, Homeland Security, International Security Program
+      </p>
+    </div>
+  </div>
+  <!-- card 4 - Rose Butchart -->
+  <div class="card">
+    <div class="image-container">
+      <a href="https://www.csis.org/people/rose-butchart">
+        <img
+          src="https://res.cloudinary.com/csisideaslab/image/upload/v1655839647/Shorthand/Never%20Trust%20Always%20Verify/5Butchart.png"
+          alt="Rose Butchart headshot"
+        />
+      </a>
+    </div>
+    <div>
+      <a class="name" href="https://www.csis.org/people/rose-butchart"
+        >Rose Butchart</a
+      >
+      <br />
+      <p id="description4">
+        Associate Fellow, Defense-Industrial Initiatives Group
+      </p>
+    </div>
+  </div>
+  <!-- card 5 - Jake Harrington -->
+  <div class="card">
+    <div class="image-container">
+      <a href="https://www.csis.org/people/jake-harrington">
+        <img
+          src="https://res.cloudinary.com/csisideaslab/image/upload/v1655839647/Shorthand/Never%20Trust%20Always%20Verify/5Harrington_1.jpg"
+          alt="Jake Harrington headshot"
+        />
+      </a>
+    </div>
+    <div>
+      <a class="name" href="https://www.csis.org/people/jake-harrington"
+        >Jake Harrington</a
+      >
+      <br />
+      <p id="description5">
+        Intelligence Fellow, International Security Program
+      </p>
+    </div>
+  </div>
+  <!-- card 6 - Devi Nair -->
+  <div class="card">
+    <div class="image-container">
+      <a href="https://www.csis.org/people/devi-nair">
+        <img
+          src="https://res.cloudinary.com/csisideaslab/image/upload/v1655839647/Shorthand/Never%20Trust%20Always%20Verify/Devi_Nair.jpg"
+          alt="Devi Nair headshot"
+        />
+      </a>
+    </div>
+    <div>
+      <a class="name" href="https://www.csis.org/people/devi-nair">Devi Nair</a>
+      <br />
+      <p id="description6">
+        Associate Director and Associate Fellow, International Security Program
+      </p>
+    </div>
+  </div>
+  <!-- card 7 - Harshana Ghoorhoo -->
+  <div class="card">
+    <div class="image-container">
+      <a
+        href="https://www.csis.org/programs/about-us/leadership-and-staff/staff"
+      >
+        <img
+          src="https://res.cloudinary.com/csisideaslab/image/upload/v1655839656/Shorthand/Never%20Trust%20Always%20Verify/screen-shot-2022-06-17-at-2-00-26-pm-1353x1353.png"
+          alt="headshot placeholder"
+        />
+      </a>
+    </div>
+    <div>
+      <a
+        class="name"
+        href="https://www.csis.org/programs/about-us/leadership-and-staff/staff"
+        >Harshana Ghoorhoo</a
+      >
+      <br />
+      <p id="description7">
+        Research Assistant, International Security Program
+      </p>
+    </div>
+  </div>
+  <!-- card 8 - Paula Reynal -->
+  <div class="card">
+    <div class="image-container">
+      <a
+        href="https://www.csis.org/programs/about-us/leadership-and-staff/staff"
+      >
+        <img
+          src="https://res.cloudinary.com/csisideaslab/image/upload/v1655839656/Shorthand/Never%20Trust%20Always%20Verify/screen-shot-2022-06-17-at-2-00-26-pm-1353x1353.png"
+          alt="headshot placeholder"
+        />
+      </a>
+    </div>
+    <div>
+      <a
+        class="name"
+        href="https://www.csis.org/programs/about-us/leadership-and-staff/staff"
+        >Paula Reynal</a
+      >
+      <br />
+      <p id="description8">Intern, International Security Program</p>
+    </div>
+  </div>
+</div>

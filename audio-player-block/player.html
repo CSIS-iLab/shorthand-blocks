@@ -1,0 +1,158 @@
+<style>
+  .audio-block-container {
+    margin-top: 0 !important;
+    margin-bottom: 48px !important;
+    margin-left: 40px;
+    max-width: 350px;
+    /*float: right;*/
+    width: 50vw;
+    clear: both;
+  }
+
+  .audio-title {
+    font-family: canada-type-gibson, sans-serif;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    display: block;
+    color: #333;
+  }
+
+  .audio-block {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    display: block;
+    font-size: 1.15em;
+    color: #333;
+    line-height: 1.25;
+  }
+
+  .audio-block audio {
+    min-width: 300px;
+    height: 54px;
+  }
+
+  .audio-caption {
+    margin: 0;
+    padding-top: 0 !important;
+    margin-top: 0.5em;
+    color: #555d66;
+    font-size: 13px;
+    display: block !important;
+    font-family: canada-type-gibson, sans-serif;
+    line-height: 1.4 !important;
+    text-align: left !important;
+    max-width: 66opx;
+    font-style: unset;
+  }
+
+  .audio-link {
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 13px;
+  }
+
+  .audio-people-container {
+    display: grid;
+    grid-template-columns: 75px auto;
+    grid-template-rows: auto;
+    grid-column-gap: 1rem;
+    grid-template-areas: "audioimg audioprofile";
+    margin: 8px 0;
+    color: #333;
+    line-height: 1.25;
+  }
+
+  .audio-speaker-image {
+    grid-area: audioimg;
+    max-width: 100%;
+    border-style: none;
+    font-size: 1.15em;
+    color: #333;
+    line-height: 1.25;
+  }
+
+  .audio-speaker-container {
+    grid-area: audioprofile;
+    display: block;
+    color: #333;
+    font-family: "Gelasio", Georgia, "Times New Roman", Times, serif;
+    line-height: 1.25;
+  }
+
+  .audio-speaker-name {
+    padding-top: 8px;
+    font-size: 1em;
+    font-family: canada-type-gibson, sans-serif;
+    line-height: 20px;
+    margin-bottom: 4px;
+    display: block;
+    color: #333;
+  }
+
+  .audio-speaker-title {
+    margin-bottom: 0;
+    padding-top: 0 !important;
+    font-family: canada-type-gibson, sans-serif;
+    font-size: 0.8em;
+    line-height: 1.25 !important;
+    color: rgba(51, 51, 51, 0.75);
+    display: block !important;
+    text-align: left !important;
+    max-width: 660px;
+    font-style: unset;
+    margin: 0;
+    padding: 0;
+    width: auto;
+  }
+</style>
+
+<div class="audio-block-container">
+  <div class="audio-title">Educating the Next Consumer Generation</div>
+  <figure class="audio-block">
+    <audio
+      controls
+      src="https://journalism.csis.org/wp-content/uploads/2022/07/DePaulBootcampFinalMixdown_FoodWaste.mp3"
+    ></audio>
+    <figcaption class="audio-caption">
+      Background Music via&nbsp;
+      <a
+        class="audio-link"
+        rel="noreferrer noopener"
+        target="_blank"
+        href="http://artlist.io/"
+        >Artlist.io</a
+      >
+      - "Hourglass" by Yehezkel Raz and Ian Post, "Colorful" by Eyal Raz
+    </figcaption>
+  </figure>
+  <div class="audio-people-container">
+    <img
+      class="audio-speaker-image"
+      src="https://ae01.alicdn.com/kf/HTB17AjnXSMmBKNjSZTEq6ysKpXau/DIY-5D-Square-Diamond-Painting-Tabby-Kitten-and-Daisy-Flowers-Mosaic-Pattern-Rhinestones-Crystal-Handmade-Diamond.jpg"
+      aria-hidden="true"
+    />
+    <div class="audio-speaker-container">
+      <div class="audio-speaker-name">Cat 1</div>
+      <figcaption class="audio-speaker-title">CEO of Cat Company</figcaption>
+    </div>
+  </div>
+  <div class="audio-people-container">
+    <img
+      class="audio-speaker-image"
+      src="https://ae01.alicdn.com/kf/HTB17AjnXSMmBKNjSZTEq6ysKpXau/DIY-5D-Square-Diamond-Painting-Tabby-Kitten-and-Daisy-Flowers-Mosaic-Pattern-Rhinestones-Crystal-Handmade-Diamond.jpg"
+      aria-hidden="true"
+    />
+    <div class="audio-speaker-container">
+      <div class="audio-speaker-name">Cat 2</div>
+      <figcaption class="audio-speaker-title">
+        Director, Cat Institute
+      </figcaption>
+    </div>
+  </div>
+</div>
