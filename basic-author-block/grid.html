@@ -1,7 +1,12 @@
 <style>
+  /* NOTES:
+  - In the "description" sections -- update the font family as needed. If
+  empty or commented out, it will inherit the default from Shorthand.*/
+
   .card {
     color: white;
     padding: 1rem;
+    height: fit-content;
   }
 
   .cards {
@@ -14,7 +19,6 @@
   }
 
   .card:hover a {
-    color: #3dd5ff;
     border-color: #3dd5ff;
   }
 
@@ -24,14 +28,14 @@
 
   .image-container {
     margin-bottom: 1em;
-    background: #0065a4;
+    background: #0054a4;
     max-width: 224px;
     transition: 0.3s;
   }
 
-  img {
-    max-width: 100%;
-    max-height: 100%;
+  .card img {
+    width: 100%;
+    max-height: 224px;
     display: block;
     margin-bottom: -1em;
     position: relative;
@@ -42,7 +46,7 @@
   .name {
     display: inline;
     font-size: 1em;
-    font-family: "utopia-std", serif;
+    /*font-family: "synthese", san-serif;*/
     font-weight: 300;
     color: #0054a4;
     text-decoration: none;
@@ -53,257 +57,284 @@
     border-bottom: 2px solid transparent;
   }
 
+  .content {
+    margin-top: 30px;
+  }
+
+  /** needed to use IDs so wouldn't be overridden **/
+
   #description1 {
     display: inline;
     color: black;
+    opacity: 65%;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
     font-size: 0.8em;
     line-height: 1.3;
-    font-family: "utopia-std", serif;
-    font-weight: 500;
+    /*font-family: "synthese", san-serif;*/
+    font-weight: 400;
   }
 
   #description2 {
     display: inline;
     color: black;
+    opacity: 65%;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
     font-size: 0.8em;
     line-height: 1.3;
-    font-family: "utopia-std", serif;
-    font-weight: 500;
+    /*font-family: "synthese", san-serif;*/
+    font-weight: 400;
   }
 
   #description3 {
     display: inline;
     color: black;
+    opacity: 65%;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
     font-size: 0.8em;
     line-height: 1.3;
-    font-family: "utopia-std", serif;
-    font-weight: 500;
+    /*font-family: "synthese", san-serif;*/
+    font-weight: 400;
   }
 
   #description4 {
     display: inline;
     color: black;
+    opacity: 65%;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
     font-size: 0.8em;
     line-height: 1.3;
-    font-family: "utopia-std", serif;
-    font-weight: 500;
+    /*font-family: "synthese", san-serif;*/
+    font-weight: 400;
   }
 
   #description5 {
     display: inline;
     color: black;
+    opacity: 65%;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
     font-size: 0.8em;
     line-height: 1.3;
-    font-family: "utopia-std", serif;
-    font-weight: 500;
+    /*font-family: "synthese", san-serif;*/
+    font-weight: 400;
   }
 
   #description6 {
     display: inline;
     color: black;
+    opacity: 65%;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
     font-size: 0.8em;
     line-height: 1.3;
-    font-family: "utopia-std", serif;
-    font-weight: 500;
+    /*font-family: "synthese", san-serif;*/
+    font-weight: 400;
   }
 
   #description7 {
     display: inline;
     color: black;
+    opacity: 65%;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
     font-size: 0.8em;
     line-height: 1.3;
-    font-family: "utopia-std", serif;
-    font-weight: 500;
+    /*font-family: "synthese", san-serif;*/
+    font-weight: 400;
   }
 
   #description8 {
     display: inline;
     color: black;
+    opacity: 65%;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
     font-size: 0.8em;
     line-height: 1.3;
-    font-family: "utopia-std", serif;
-    font-weight: 500;
+    /*font-family: "synthese", san-serif;*/
+    font-weight: 400;
   }
 </style>
 
-<!--<link rel="stylesheet" href="style.css" />-->
 <div class="cards">
-  <!-- card 1 - Emily Harding -->
+  <!----------------------------------------- card 1 ----------------------------------------->
   <div class="card">
     <div class="image-container">
-      <a href="https://www.csis.org/people/emily-harding">
+      <a
+        href="https://www.csis.org/programs/about-us/leadership-and-staff/staff"
+      >
         <img
-          src="https://res.cloudinary.com/csisideaslab/image/upload/v1655839649/Shorthand/Never%20Trust%20Always%20Verify/5Harding_1.jpg"
-          alt="Emily Harding headshot"
-        />
-      </a>
-    </div>
-    <a class="name" href="https://www.csis.org/people/emily-harding"
-      >Emily Harding</a
-    >
-    <br />
-    <p id="description1">
-      Deputy Director and Senior Fellow, International Security Program
-    </p>
-  </div>
-  <!-- card 2 - James Andrew Lewis -->
-  <div class="card">
-    <div class="image-container">
-      <a href="https://www.csis.org/people/james-andrew-lewis">
-        <img
-          src="https://res.cloudinary.com/csisideaslab/image/upload/v1655839647/Shorthand/Never%20Trust%20Always%20Verify/5Lewis_2.jpg"
-          alt="James Andrew Lewis headshot"
+          src="https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg"
+          alt="Author Headshot"
         />
       </a>
     </div>
     <div class="content">
-      <a class="name" href="https://www.csis.org/people/james-andrew-lewis"
-        >James Andrew Lewis</a
+      <a
+        class="name"
+        href="https://www.csis.org/programs/about-us/leadership-and-staff/staff"
+        >FirstName LastName</a
       >
       <br />
-      <p id="description2">
-        Senior Vice President and Director, Strategic Technologies Program
-      </p>
+      <p id="description1">Author Title</p>
     </div>
   </div>
-  <!-- card 3 - Suzanne Spaulding -->
+  <!----------------------------------------- card 2 ----------------------------------------->
   <div class="card">
     <div class="image-container">
-      <a href="https://www.csis.org/people/suzanne-spaulding">
+      <a
+        href="https://www.csis.org/programs/about-us/leadership-and-staff/staff"
+      >
         <img
-          src="https://res.cloudinary.com/csisideaslab/image/upload/v1655839647/Shorthand/Never%20Trust%20Always%20Verify/5Spaulding_0.jpg"
-          alt="Suzanne Spaulding headshot"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKr5wT7rfkjkGvNeqgXjBmarC5ZNoZs-H2uMpML8O7Q4F9W-IlUQibBT6IPqyvX45NOgw&usqp=CAU"
+          alt="Author Headshot"
         />
       </a>
     </div>
     <div class="content">
-      <a class="name" href="https://www.csis.org/people/suzanne-spaulding"
-        >Suzanne Spaulding
-      </a>
-      <br />
-      <p id="description3">
-        Senior Adviser, Homeland Security, International Security Program
-      </p>
-    </div>
-  </div>
-  <!-- card 4 - Rose Butchart -->
-  <div class="card">
-    <div class="image-container">
-      <a href="https://www.csis.org/people/rose-butchart">
-        <img
-          src="https://res.cloudinary.com/csisideaslab/image/upload/v1655839647/Shorthand/Never%20Trust%20Always%20Verify/5Butchart.png"
-          alt="Rose Butchart headshot"
-        />
-      </a>
-    </div>
-    <div>
-      <a class="name" href="https://www.csis.org/people/rose-butchart"
-        >Rose Butchart</a
-      >
-      <br />
-      <p id="description4">
-        Associate Fellow, Defense-Industrial Initiatives Group
-      </p>
-    </div>
-  </div>
-  <!-- card 5 - Jake Harrington -->
-  <div class="card">
-    <div class="image-container">
-      <a href="https://www.csis.org/people/jake-harrington">
-        <img
-          src="https://res.cloudinary.com/csisideaslab/image/upload/v1655839647/Shorthand/Never%20Trust%20Always%20Verify/5Harrington_1.jpg"
-          alt="Jake Harrington headshot"
-        />
-      </a>
-    </div>
-    <div>
-      <a class="name" href="https://www.csis.org/people/jake-harrington"
-        >Jake Harrington</a
-      >
-      <br />
-      <p id="description5">
-        Intelligence Fellow, International Security Program
-      </p>
-    </div>
-  </div>
-  <!-- card 6 - Devi Nair -->
-  <div class="card">
-    <div class="image-container">
-      <a href="https://www.csis.org/people/devi-nair">
-        <img
-          src="https://res.cloudinary.com/csisideaslab/image/upload/v1655839647/Shorthand/Never%20Trust%20Always%20Verify/Devi_Nair.jpg"
-          alt="Devi Nair headshot"
-        />
-      </a>
-    </div>
-    <div>
-      <a class="name" href="https://www.csis.org/people/devi-nair">Devi Nair</a>
-      <br />
-      <p id="description6">
-        Associate Director and Associate Fellow, International Security Program
-      </p>
-    </div>
-  </div>
-  <!-- card 7 - Harshana Ghoorhoo -->
-  <div class="card">
-    <div class="image-container">
-      <a
-        href="https://www.csis.org/programs/about-us/leadership-and-staff/staff"
-      >
-        <img
-          src="https://res.cloudinary.com/csisideaslab/image/upload/v1655839656/Shorthand/Never%20Trust%20Always%20Verify/screen-shot-2022-06-17-at-2-00-26-pm-1353x1353.png"
-          alt="headshot placeholder"
-        />
-      </a>
-    </div>
-    <div>
       <a
         class="name"
         href="https://www.csis.org/programs/about-us/leadership-and-staff/staff"
-        >Harshana Ghoorhoo</a
+        >FirstName LastName</a
       >
       <br />
-      <p id="description7">
-        Research Assistant, International Security Program
-      </p>
+      <p id="description1">Author Title</p>
     </div>
   </div>
-  <!-- card 8 - Paula Reynal -->
+  <!----------------------------------------- card 3 ----------------------------------------->
   <div class="card">
     <div class="image-container">
       <a
         href="https://www.csis.org/programs/about-us/leadership-and-staff/staff"
       >
         <img
-          src="https://res.cloudinary.com/csisideaslab/image/upload/v1655839656/Shorthand/Never%20Trust%20Always%20Verify/screen-shot-2022-06-17-at-2-00-26-pm-1353x1353.png"
-          alt="headshot placeholder"
+          src="https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80"
+          alt="Author Headshot"
         />
       </a>
     </div>
-    <div>
+    <div class="content">
       <a
         class="name"
         href="https://www.csis.org/programs/about-us/leadership-and-staff/staff"
-        >Paula Reynal</a
+        >FirstName LastName</a
       >
       <br />
-      <p id="description8">Intern, International Security Program</p>
+      <p id="description1">Author Title</p>
+    </div>
+  </div>
+  <!----------------------------------------- card 4 ----------------------------------------->
+  <div class="card">
+    <div class="image-container">
+      <a
+        href="https://www.csis.org/programs/about-us/leadership-and-staff/staff"
+      >
+        <img
+          src="https://images.unsplash.com/photo-1574158622682-e40e69881006?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80"
+          alt="Author Headshot"
+        />
+      </a>
+    </div>
+    <div class="content">
+      <a
+        class="name"
+        href="https://www.csis.org/programs/about-us/leadership-and-staff/staff"
+        >FirstName LastName</a
+      >
+      <br />
+      <p id="description1">Author Title</p>
+    </div>
+  </div>
+  <!----------------------------------------- card 5 ----------------------------------------->
+  <div class="card">
+    <div class="image-container">
+      <a
+        href="https://www.csis.org/programs/about-us/leadership-and-staff/staff"
+      >
+        <img
+          src="https://images.unsplash.com/photo-1597838816882-4435b1977fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2049&q=80"
+          alt="Author Headshot"
+        />
+      </a>
+    </div>
+    <div class="content">
+      <a
+        class="name"
+        href="https://www.csis.org/programs/about-us/leadership-and-staff/staff"
+        >FirstName LastName</a
+      >
+      <br />
+      <p id="description1">Author Title</p>
+    </div>
+  </div>
+  <!----------------------------------------- card 6 ----------------------------------------->
+  <div class="card">
+    <div class="image-container">
+      <a
+        href="https://www.csis.org/programs/about-us/leadership-and-staff/staff"
+      >
+        <img
+          src="https://images.unsplash.com/photo-1596854307809-6e754c522f95?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80"
+          alt="Author Headshot"
+        />
+      </a>
+    </div>
+    <div class="content">
+      <a
+        class="name"
+        href="https://www.csis.org/programs/about-us/leadership-and-staff/staff"
+        >FirstName LastName</a
+      >
+      <br />
+      <p id="description1">Author Title</p>
+    </div>
+  </div>
+  <!----------------------------------------- card 7 ----------------------------------------->
+  <div class="card">
+    <div class="image-container">
+      <a
+        href="https://www.csis.org/programs/about-us/leadership-and-staff/staff"
+      >
+        <img
+          src="https://images.unsplash.com/photo-1611856950845-c82ee9a80c55?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2055&q=80"
+          alt="Author Headshot"
+        />
+      </a>
+    </div>
+    <div class="content">
+      <a
+        class="name"
+        href="https://www.csis.org/programs/about-us/leadership-and-staff/staff"
+        >FirstName LastName</a
+      >
+      <br />
+      <p id="description1">Author Title</p>
+    </div>
+  </div>
+  <!----------------------------------------- card 8 ----------------------------------------->
+  <div class="card">
+    <div class="image-container">
+      <a
+        href="https://www.csis.org/programs/about-us/leadership-and-staff/staff"
+      >
+        <img
+          src="https://images.unsplash.com/photo-1565560681175-99ae21e26ce1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80"
+          alt="Author Headshot"
+        />
+      </a>
+    </div>
+    <div class="content">
+      <a
+        class="name"
+        href="https://www.csis.org/programs/about-us/leadership-and-staff/staff"
+        >FirstName LastName</a
+      >
+      <br />
+      <p id="description1">Author Title</p>
     </div>
   </div>
 </div>
