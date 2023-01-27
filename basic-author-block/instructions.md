@@ -32,3 +32,28 @@ Below is a code sample for a single author card. To update a card for your autho
     <p id="description1">AUTHOR TITLE</p>
   </div>
 ```
+# To add a specific background color to the section
+You'll need to make this change in the CSS for the entire page; making the change inside this HTML block will only color the grid background, not the entire section.
+
+First, grab the "Section ID" from the section's settings. In this example it's `#section-aTVDuH1Cwy`:<br> 
+<img width="211" alt="Screenshot 2023-01-27 at 11 01 35 AM" src="https://user-images.githubusercontent.com/41589348/215131999-2bb2d6a3-2847-497f-98d4-99ef4193344f.png">
+
+Next, go to the CSS settings for your Shorthand piece:
+<img width="706" alt="Screenshot 2023-01-27 at 11 00 10 AM" src="https://user-images.githubusercontent.com/41589348/215131510-b1ab5d95-b436-400f-8baf-eb4dc3120885.png">
+
+Finally, add your section ID and specify the background color: 
+```
+#section-aTVDuH1Cwy {
+  background: #000;
+}
+```
+
+## Why use the section ID instead of adding a new CSS class? 
+In the section options you'll also see "ADD CSS CLASS TO SECTION" with a white input box:<br>
+<img width="217" alt="Screenshot 2023-01-27 at 11 04 08 AM" src="https://user-images.githubusercontent.com/41589348/215132712-caf25bc4-0003-4e62-a037-b05d19b58165.png">
+
+Inside that box you can create your own CSS class, like "my-block". Shorthand adds the `.sh` to the front, so when you go to edit the CSS for the entire page you'd use `.sh-my-block` instead of the section ID.
+
+This _does_ work but it does introduce some risks. CSS stands for "Cascading Style Sheets" -- the settings all trickle down from least specific to most specific, and the most specific settings override the least specific ones. A class is less specific than an ID, since it can be applied to multiple elements. An ID is unique and can only apply to one element. Classes can be reused, IDs cannot. The risk is that a class, when applied to more than one section, will affect more than you intend. The odds of this are low in an environment like Shorthand, but specificity is a good habit to develop. 
+
+Classes _are_ good for styles you want to apply throughout the piece but not to the _entire_ piece. If you want to make certain sections have a blue background, create a class called `.sh-blue-background` and then apply that to as many sections as you need. Shorthand interprets your custom class as higher in priority than the default `.BlockHTML` so it will only apply it to those sections instead of every single one. 
