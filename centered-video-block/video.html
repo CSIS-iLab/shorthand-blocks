@@ -1,0 +1,29 @@
+<style>
+  .parent {
+    display: flex;
+    position: relative;
+    overflow: visible;
+    justify-content: center;
+    max-width: 800px;
+    margin: auto;
+  }
+
+  #my-video {
+    margin: auto;
+    max-width: 400px;
+    position: relative;
+    z-index: 9999;
+  }
+</style>
+<div class="parent">
+  <video
+    id="my-video"
+    controls
+    poster="https://res.cloudinary.com/csisideaslab/image/upload/v1681236504/Shorthand/Frozen%20Frontiers/poster-1080x1080.jpg"
+  >
+    <source
+      src="https://res.cloudinary.com/csisideaslab/video/upload/v1681236435/Shorthand/Frozen%20Frontiers/sub-video-v2.mp4"
+      type="video/mp4"
+    />
+  </video>
+</div>
