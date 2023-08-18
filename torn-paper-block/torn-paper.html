@@ -1,0 +1,122 @@
+<style>
+  .in-between {
+    margin: auto;
+    text-align: center;
+    padding: 25px 0 25px 0;
+    font-family: sans-serif !important;
+  }
+
+  .wrapper {
+    padding: 25px;
+    margin: auto;
+  }
+
+  .tear-wrapper {
+    padding-bottom: 15px;
+    margin: -20px auto;
+    padding-top: 20px;
+  }
+
+  .tear-wrapper .shadow.torn-edges::before {
+    content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 21"><path fill="white" fill-rule="nonzero" d="M599 0h-5l-1 1c-2 0-4 2-6 1l-5 1-4 1c-1 0-2 2-3 1-1-2-3 1-5 0-2 2-4-1-5 0-2 1-3 1-6-1h-6l-7 1c-2 0-3 2-5 0h-21c-1 0-4-1-5 1-2 2-4 0-6 1-1 2-3 0-5 0h-6c-3 0-3-2-5 0h-24c-4 3-8 0-12 1h-10l-7 1c-2 0-3 2-5 1-2 0-3 2-5 1l-5 1-6-1c-2 2-4-1-6 0h-17c-2 0-3 1-6-1-2-1-3-1-5 1-2 0-3-2-5 0l-6-1h-5l-6 1c-1 0-2-2-4-1h-4c-2 1-3 0-5-1l-6-1c-2-2-1-1-4 0-2 2-4 0-6 0-4 0-8-1-12 1l-11-1h-4l-4-1h-21l-6 1h-7l-10 1-10 1h-12l-12-1-12 1-12 1-5 1h-11l-5 1h-6l-4-1h-5c-1 0-2-2-5 0h-5l-6 1-4-1h-7c-3 0-5 0-6-2-2 1-3-1-5-1l-4-1h-4l-8-1c-1-2-3 0-4 0l-5-1H85l-5-1c-2 0-4 2-6 0H61l-6-1H14l-4-1H0v18h600V0h-1z"/></svg>');
+    position: relative;
+    top: 4px;
+  }
+
+  .tear-wrapper .shadow {
+    -webkit-filter: drop-shadow(
+      0px 0px 5px var(--color-background-quaternary, #c7c7c7)
+    );
+  }
+
+  .tear-wrapper blockquote .torn-text {
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 14px;
+    line-height: 19px;
+    margin-top: -2px;
+    margin-bottom: -9.7px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  blockquote,
+  q {
+    quotes: none;
+  }
+
+  .tear-wrapper blockquote .g-highlight {
+    background-color: #f8f8d4;
+    color: #000000;
+  }
+
+  .tear-wrapper .shadow.torn-edges::after {
+    content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 28"><path fill="white" fill-rule="nonzero" d="M23 24c3-1 7 0 10 1 2-1 3-1 4 1 2-2 4-2 6 0h4c2 1 4 2 6 0 2 0 5 2 7 0 2 1 4-2 6 0h9c2 1 5-2 7-1 2-2 4-2 6-1 2 0 5 2 7 0h15l7-1c2 0 5-2 7 0h6c2-2 3 0 5-1h6c2 1 4 0 6-1 2 0 4 2 6 0h6c4 1 7-2 10-1 3 0 7-2 11-1h4c2 1 4-2 5 0 2 2 4 0 6 1 2-2 4-1 6 1 4 2 8-2 13 0 4 2 8 0 13 0 0-2 4 0 9 1 5 0 10-2 12 0h9c3-2 6 0 9 0h9c4-2 8-1 12-1l11-1h6l5-1 6-1h27c2 2 4-1 6 0l6-1h7c2 2 4-1 6-1l6-1c4 2 8 0 12-1l11-1c2-2 4-1 6-1 2-2 4 0 6-1 2 1 5-1 7-1l6-1c3 1 7-2 11 0 4-1 8-2 12 1 2 1 3 2 5 1 2-2 4-1 5 0h7c2 2 4 0 6 0l4 1 6 1c2-2 4 2 6 0 2-1 3-2 5-1 2-1 4-3 6 0l5-1c2 2 3-1 5-1l5-1h12c3 2 7 2 11 0 3 0 4 2 6 0 1-1 3 1 5 1h6c2 1 5 2 7 0l4-1c2-1 3-2 5-1 2-4 4-3 5 0l6-1c4-1 8 1 11-1l11-1h2v-233L0-216V24h23z"/></svg>');
+  }
+
+  @media (min-width: 600px) {
+    .tear-wrapper blockquote .torn-text {
+      font-size: 15px;
+      line-height: 21px;
+      padding: 10px 30px 5px 30px;
+    }
+  }
+
+  @media (min-width: 340px) and (max-width: 630px) {
+    .wrapper {
+      width: calc(100% - 40px);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .wrapper {
+      width: 600px;
+    }
+  }
+</style>
+<div class="wrapper">
+  <figure class="tear-wrapper">
+    <blockquote class="shadow torn-edges">
+      <div class="torn-text">
+        <p class="torn-paragraph">
+          Sec. 8. As used in this chapter, "non genital gender reassignment
+          surgery" means medical procedures
+          <span class="g-highlight">
+            knowingly performed for the purpose of assisting an individual with
+            a gender transition
+          </span>
+          , including the following:
+          <br />
+          <br />
+          (1) Surgical procedures for a male sex patient, including augmentation
+          mammoplasty, facial feminization surgery, liposuction, lipofilling,
+          voice surgery, thyroid cartilage reduction, gluteal augmentation, hair
+          reconstruction, or associated aesthetic procedures.
+
+          <br />
+          <br />
+          (2) Surgical procedures for a female sex patient, including
+          subcutaneous mastectomy, voice surgery, liposuction, lipofilling,
+          pectoral implants, or associated aesthetic procedures.
+        </p>
+      </div>
+    </blockquote>
+  </figure>
+  <p class="in-between">Text here. Etc Etc. Story. More Facts.</p>
+  <figure class="tear-wrapper">
+    <blockquote class="shadow torn-edges">
+      <div class="torn-text">
+        <p class="torn-paragraph">
+          (3)
+          <span class="g-highlight">
+            Sex-reassignment prescriptions or procedures may not be prescribed,
+            administered, or performed except by a physician</span
+          >. For the purposes of this section, the term “physician” is defined
+          as a physician licensed under chapter 458 or chapter 459 or a
+          physician practicing medicine or osteopathic medicine in the
+          employment of the Federal Government.
+        </p>
+      </div>
+    </blockquote>
+  </figure>
+</div>
