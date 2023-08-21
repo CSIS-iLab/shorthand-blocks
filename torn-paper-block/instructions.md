@@ -20,6 +20,18 @@ Inside each figure, you'll find a `<div>` with the class name "torn-text". Insid
 
 In the NYT piece, you'll notice that certain text is highlighted. That's done with the use of the `<span>` that has the class "g-highlight". Any text you want highlighted needs to go inside a `<span>` with this class name.
 
+## Changing the Background Color
+
+If you want to change the background color to something other than the white in this example, you need to update it in three places.
+
+First, inside `.tear-wrapper .shadow.torn-edges::before`, look at the `url` and change `<path fill="white"...` to `<path fill="%23FFC0CB"...` or whatever you want the color to be. (#FFC0CB is the hex code for pink).
+
+**The important part is to use %23 instead of #**. Because of URL encoding rules, the `#` must be replaced with its equivalent of `%23`. (If you're interested in the technical details, [this wiki page is helpful](https://en.wikipedia.org/wiki/Percent-encoding).)
+
+Second, inside `.tear-wrapper blockquote .torn-text` change `background-color` from `#fff` to your preferred color. This is regular CSS, so we use the hex code.
+
+Third, inside `.tear-wrapper .shadow.torn-edges::after` repeat what you did for `::before` and change the color inside `<path fill=...` from `white` to your preferred color using `%23` instead of `#`.
+
 ## Do I need anything else?
 
 - Yes, the ID of the Shorthand Section your HTML block will go in/be.
