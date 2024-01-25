@@ -20,6 +20,19 @@ This is a custom audio player block originally built for the The CSIS 2024 Globa
   - 1.5
   - 1.75
   - 2
+ 
+It also inclues the following styling customization options:
+- Audio Title
+- Audio Subtitle
+- Text font
+- Background image
+- Background color
+- Progress bar background color
+- Progress bar fill color
+- Icon color
+- Icon hover state 
+- Button color
+- Button hover state
 
 # How do I use it?
 
