@@ -1,6 +1,6 @@
 # What is this?
 
-This is an audio player block based on the one used in the Journalism Bootcamp's feature stories ([example](https://journalism.csis.org/from-grocery-store-to-landfill-addressing-food-waste-at-the-household-level/)).
+This is an audio player block pulled from the Journalism Bootcamp's feature stories ([example about halfway down this page](https://journalism.csis.org/from-grocery-store-to-landfill-addressing-food-waste-at-the-household-level/)).
 
 # How do I use it?
 
@@ -15,7 +15,7 @@ In addition to the instructions in the main README.MD file, you will need severa
 
 The structure of the HTML is one outer container named "audio-block-container", the title inside "audio-title", a block for the audio player and related information named "audio-block", and as many "audio-people-container" blocks as needed, one for each speaker.
 
-> \_To add another speaker: copy everything in one "audio-people-container" block (an example is below) and paste it at the very end, above the final closing `</div>`.
+To add another speaker: copy everything in one "audio-people-container" block (an example is below) and paste it at the very end, above the final closing `</div>`.
 
 To update a single block for a single speaker, replace what you see below in all caps (link to their photo, their name, their title, and their company/institution):
 

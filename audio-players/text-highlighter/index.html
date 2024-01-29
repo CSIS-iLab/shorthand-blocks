@@ -11,7 +11,7 @@
 
       .main {
         padding-top: 20px;
-        background: #15042f;
+        background: #fcfcfc;
       }
 
       #container {
@@ -25,15 +25,28 @@
 
       #audioParagraph,
       #highlight {
-        color: #fff;
         font-family: "Source Serif 4", serif;
         font-size: 1.125rem;
         line-height: 1.5;
       }
 
+      #audioParagraph {
+        color: #080808; /*main text color*/
+      }
+
+      #highlight {
+        color: #fcfcfc; /*text being highlighted*/
+      }
+
+      #playIcon,
+      #pauseIcon {
+        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg)
+          brightness(102%) contrast(102%); /*get filter from https://codepen.io/sosuke/pen/Pjoqqp*/
+      }
+
       .highlight-span {
         padding: 0px 2px;
-        background: #9c8cb3;
+        background: #092458; /*highlight color before pushing play*/
         border-radius: 4px;
       }
 
@@ -62,13 +75,9 @@
         animation-timing-function: linear;
         animation-play-state: paused;
         background-size: 200%;
-        background-image: linear-gradient(
-            to right,
-            #9c8cb3,
-            50%,
-            transparent 50%
-          ),
-          linear-gradient(#d3c6e6 50%, #d3c6e6 50%);
+        /*first color: default background*/
+        /*second color: color of the moving highlight*/
+        background-image: linear-gradient(to right, #092458, 50%, transparent 50%), linear-gradient(#134fbe 50%, #134fbe 50%);
       }
 
       button {
