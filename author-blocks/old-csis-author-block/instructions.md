@@ -1,6 +1,8 @@
 # What is this?
 
-An html/CSS grid for ceating an author block in Shorthand.com. Based on the existing author block on CSIS.org ([example](https://www.csis.org/analysis/improved-export-controls-enforcement-technology-needed-us-national-security)).
+An html/CSS grid for ceating an author block in Shorthand.com. Based on the author block from the old CSIS.org ([example](https://www.csis.org/analysis/improved-export-controls-enforcement-technology-needed-us-national-security)).
+
+The style no longer matches CSIS.org but it's a good place to start - there is a color background for each photo that can change on hover, as well as an underline for the author's name that can appear on hover. The photos appear in a grid and the grid is responsive for all screen sizes. 
 
 # How do I use it?
 
@@ -13,9 +15,11 @@ In addition to the instructions in the main README.MD file, you will need severa
 
 The structure of the HTML is one container named "cards" and then as many "card" containers as needed, one for each author.
 
-> _To add another author_: copy everything in one block (an example is below) and paste it at the very end, above the final closing `</div>`.
+_To add another author_: copy everything in one block (an example is below) and paste it at the very end, above the final closing `</div>`.
 
 Below is a code sample for a single author card. To update a card for your author, replace the text you see in all caps. It is important to link to the author bio in both places specified.
+
+NOTE: This was designed to use the headshots from CSIS.org, which were 224x224 square. Headshots on the current site are 135x135 square. If you use photos with different proportions (non-square) you will need to debug the styling.
 
 ```
   <div class="card">

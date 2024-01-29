@@ -6,19 +6,14 @@
 /*name*/
 #section-k49TYzeXEy .GridItem a {
   margin-bottom: 0;
-  /*color: black !important;*/
+  color: #092458;
   font-size: 1.9rem;
   border-bottom: 2px solid transparent;
-              background: linear-gradient(to right, #f32170,
-                    #ff6b08, #cf23cf, #eedd44);
-            -webkit-text-fill-color: transparent;
-            -webkit-background-clip: text;
-
 }
 
 /*title*/
 #section-k49TYzeXEy .Theme-ForegroundColorCustom-MbMTi1 {
-  color: #DE1648 !important;
+  color: #080808 !important;
   border-bottom: 2px solid transparent;
 }
 
@@ -29,7 +24,7 @@
 
 /*background color that shows through on hover*/
 #section-k49TYzeXEy .GridItem .Grid_image {
-  background-color: #c6c58c;
+  background-color: #1a208b;
   opacity: 1;
 }
 
@@ -39,14 +34,14 @@
   transition: .2s ease !important;
 }
 
-/*link/name underline on hover*/
+/*link & name underline on hover*/
 #section-k49TYzeXEy .GridItem:hover a {
   transition: color 0.3s linear !important;
-  border-color: green;
+  border-color: #0e3acc;
 }
 
 /*title on hover*/
 #section-k49TYzeXEy .GridItem:hover .Theme-ForegroundColorCustom-MbMTi1 {
   transition: color 0.3s linear !important;
-  border-color: green;
+  border-color: #0e3acc;
 }
