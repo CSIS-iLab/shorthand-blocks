@@ -1,0 +1,135 @@
+<!-- This is the default scrollytelling behaviour -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flagged Ships Story Part 1</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;700&display=swap");
+
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: transparent;
+      }
+
+      .fl-scrolly-caption {
+        display: none;
+      }
+
+      p {
+        font-family: "Source Sans 3", sans-serif;
+        width: 780px;
+      }
+      
+      .flourish-embed {
+        /* padding-top: 50px; */
+      }
+
+      #test,
+      #test2 {
+        font-weight: bold;
+      }
+
+      /* ::after is what makes the hexagons */
+      #test::after {
+        content: "\2B22";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+        border-radius: 50%;
+        color: #8ab3b5;
+        font-family: sans-serif;
+        font-size: 1.2em;
+        margin-left: 5px;
+        cursor: pointer;
+      }
+
+      #test2::after {
+        content: "\2B22";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+        border-radius: 50%;
+        color: #458e8f;
+        font-family: sans-serif;
+        font-size: 1.2em;
+        margin-left: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="my-wrapper">
+      <!-- 1. Drop in the normal embed code for the Flourish story -->
+      <!-- That heading is from the original instructions - all you need from your story is what's in "data-src" (`story/{ID}?{more numbers}`) and the story ID. Here it's 2125397. Replace every occurrence of that ID with the one you want to use instead. Make sure to keep 'data-height="100vh"' below.-->
+      <div
+        class="flourish-embed"
+        data-src="story/2121030?39773"
+        data-url="https://flo.uri.sh/story/2121030/embed"
+        data-height="100vh"
+      >
+        <script src="https://public.flourish.studio/resources/embed.js" defer></script>
+      </div>
+
+      <!-- 2. Add your captions with links to the relevant slides -->
+      <!--However many slides you have, it's just #story/{ID}/slide-{slide Number}-->
+      <p>
+        <!--For this to work, _everything_ has to be inside <a></a>. Additional text, HTML tags, styles -- it all has to be between the <a> tags.-->
+        <a href="#story/2121030/slide-1"
+          >These indicators offer clues into the operations of Chinese research
+          and survey vessels.          
+        </a>
+      </p>
+      <p>
+        <!--For this to work, _everything_ has to be inside <a></a>. Additional text, HTML tags, styles -- it all has to be between the <a> tags.-->
+        <a href="#story/2121030/slide-1"
+          ><i> Each hexagon represents one vessel.</i>
+        </a>
+      </p>
+      <p>
+        <a href="#story/2121030/slide-2"
+          >Of the 64 vessels that have been active between 2020 and 2023, 52
+          displayed at least two warning indicators.</a
+        >
+      </p>
+      <p>
+        <a href="#story/2121030/slide-3"
+          >The majority exhibited all three. <br />
+          <!--Target the <span> tag if you want to add shapes/icons after the text. If they need to be different colors, you need to use different IDs. Remember a class changes everything with that class name, and ID only changes things with that ID and IDs have to be unique.-->
+          <span id="test"> </span> <b>2 indicators</b><br />
+
+          <span id="test2"> </span> <b>3 indicators</b>
+        </a>
+      </p>
+      <p>
+        <a href="#story/2121030/slide-4"
+          >The remaining 12 ships either lacked concerning organizational links
+          and activity patterns, or there was insufficient data to deem them
+          problematic.
+        </a>
+      </p>
+    </div>
+  </body>
+
+  <script
+  src="https://cdn.flourish.rocks/flourish-scrolly-v3.min.js"
+  type="text/javascript"
+></script>
+
+<script type="text/javascript">
+  initFlourishScrolly();
+</script>
+</html>

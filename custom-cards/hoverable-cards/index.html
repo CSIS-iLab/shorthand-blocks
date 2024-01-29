@@ -1,0 +1,148 @@
+<style>
+
+  :root {
+    --surface-color: #590000 !important;
+    --curve: 40;
+    --box-shadow: -2px -4px 2px -3px rgba(47, 43, 39, 0.86);
+  }
+
+  .custom-cards {
+    padding: 0 !important;
+    list-style-type: none;
+  }
+
+  .custom-card {
+    position: relative;
+    display: block;
+    height: 100%;
+    border-radius: 0 0 calc(var(--curve) * 1px) calc(var(--curve) * 1px);
+    overflow: hidden;
+    text-decoration: none;
+  }
+
+  .custom-card__image {
+    width: 100%;
+    height: auto;
+  }
+
+  .custom-card__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    border-radius: calc(var(--curve) * 1px);
+    background-color: var(--surface-color);
+    transform: translateY(100%);
+    transition: 0.2s ease-in-out;
+  }
+
+  .custom-card:hover .custom-card__overlay {
+    transform: translateY(0);
+  }
+
+  .custom-card__header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    padding: 2em !important;
+    border-radius: calc(var(--curve) * 1px) calc(var(--curve) * 1px) 0 0;
+    background-color: var(--surface-color);
+    box-shadow: var(--box-shadow);
+    transform: translateY(-100%);
+    transition: 0.2s ease-in-out;
+    color: #ffc72c !important;
+  }
+
+  .custom-card:hover .custom-card__header {
+    transform: translateY(0);
+  }
+
+  .custom-card__header-text {
+    font-family: "Righteous", cursive;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    gap: 1em;
+  }
+
+  @media screen and (min-width: 600px) {
+    .custom-card__header-text {
+      gap: 1.5em;
+    }
+  }
+
+  .custom-card__quote-icon {
+    font-size: 2em !important;
+  }
+
+  @media screen and (min-width: 600px) {
+    .custom-card__quote-icon {
+      font-size: 2.5em !important;
+    }
+  }
+
+  .custom-card__title {
+    font-size: 1em !important;
+    margin: 0 !important;
+  }
+
+  @media screen and (min-width: 600px) {
+    .custom-card__title {
+      font-size: 1.5em !important;
+    }
+  }
+
+  .custom-card__caret {
+    position: absolute;
+    top: 18%;
+    right: 6%;
+    transition: 0.2s ease-in-out;
+    font-size: 1.13em;
+    color: #ebdbc1 !important;
+  }
+
+  .custom-card:hover .custom-card__caret {
+    transform: rotate(180deg);
+  }
+
+  .custom-card__description {
+    padding: 0 2em 2em !important;
+    margin: 0 !important;
+    color: #ebdbc1 !important;
+    font-family: "Jost", sans-serif !important;
+    font-size: 1.5em;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    line-height: 1 !important;
+  }
+
+  @media screen and (min-width: 600px) {
+    .custom-card__description {
+      line-height: 1.7 !important;
+    }
+  }
+</style>
+
+  <ul class="custom-cards">
+    <li>
+      <div class="custom-card">
+        <img class="custom-card__image" src="https://res.cloudinary.com/csisideaslab/image/upload/v1701284786/Shorthand/PONI%20Ukraine%20Nuclear%20Rhetoric%20Timeline/Biden-wFrame.png" alt="Illustration of President Biden" />
+        <div class="custom-card__overlay">
+          <div class="custom-card__header">
+            <div class="custom-card__header-text">
+              <span class="fa fa-solid fa-quote-right custom-card__quote-icon"></span>
+              <h3 class="custom-card__title">Armageddon</h3>
+            </div>
+            <i class="fa-solid fa-caret-down custom-card__caret"></i>
+          </div>
+          <p class="custom-card__description">“We have not faced the prospect of Armageddon since Kennedy and the Cuban Missile Crisis. . . . He’s not joking when he talks about the potential use of tactical nuclear weapons, or biological or chemical weapons, because his military is, you might say, significantly underperforming.”</p>
+          <p class="custom-card__description"> <i> - Joe Biden, President of the United States, <a class="link--yellow" href="https://www.cbsnews.com/news/biden-armageddon-nuclear-risk-cuban-missile-crisis-russia-tensions/" target="_blank" rel="noopener noreferrer">October 6, 2022</a></i></p>
+        </div>
+      </div>
+    </li>
+  </ul>

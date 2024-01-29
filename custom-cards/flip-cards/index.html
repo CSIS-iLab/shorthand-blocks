@@ -1,0 +1,443 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,700;1,400;1,700&family=Kalam:wght@400;700&family=Neucha&family=Righteous&display=swap');
+  
+  /* -------------------------- Playing cards -------------------------- */
+
+  .flip-cards-section__text {
+    font-family: "Jost", sans-serif !important;
+    font-size: 28px !important;
+    line-height: 1.2 !important;
+  }
+
+  .back {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start !important;
+    padding-top: 146px !important;
+    border: 8px solid #b68600 !important;
+    color: #350000 !important;
+    font-family: "Righteous", cursive !important;
+    font-weight: 700;
+    font-size: 160% !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+    /* background: repeating-linear-gradient(70deg, #EBDBC1, #EBDBC1 10px, #D7B784 10px, #D7B784 20px); */
+    background: #ebdbc1;
+    background-image: url("https://res.cloudinary.com/csisideaslab/image/upload/v1699542936/Shorthand/PONI%20Ukraine%20Nuclear%20Rhetoric%20Timeline/Kremlin-tan-transparent.png");
+    background-size: 200%;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+  }
+
+  .face__num {
+    color: #b68600 !important;
+    margin: 0;
+    font-weight: 400;
+  }
+
+  .face__question {
+    margin-bottom: 0;
+  }
+
+  .face__answer {
+    margin: 8px 0 !important;
+  }
+
+  * {
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  /* -------------------------------------------------------------------------- */
+  /*                              Shorthand Section                             */
+  /* -------------------------------------------------------------------------- */
+
+  .sh-flip-cards-section {
+    background: #350000 !important;
+    margin: 0;
+    padding-bottom: 48px;
+    /* overflow: hidden; */
+  }
+
+  @media screen and (min-width: 1100px) {
+    .sh-flip-cards-section {
+      padding-bottom: 60px;
+    }
+  }
+
+  /* -------------------------------------------------------------------------- */
+  /*                               Section wrapper                              */
+  /* -------------------------------------------------------------------------- */
+
+  .flip-cards-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    flex-direction: column;
+    width: fit-content;
+    height: 100%;
+  }
+
+  @media screen and (min-width: 1100px) {
+    .flip-cards-wrapper {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  /* -------------------------------------------------------------------------- */
+  /*                                    Intro                                   */
+  /* -------------------------------------------------------------------------- */
+
+  .flip-intro {
+    text-align: center;
+    margin: 0 10vw !important;
+    width: 80vw !important;
+    height: 100% !important;
+    color: #eaeaea !important;
+  }
+
+  @media screen and (min-width: 1100px) {
+    .flip-intro {
+      height: fit-content !important;
+      margin-left: 25% !important;
+      max-width: 50% !important;
+      padding: 48px;
+    }
+  }
+
+  .flip-cards-section__heading {
+    font-family: "Righteous", cursive !important;
+    font-size: 48px !important;
+    line-height: 1.15;
+    margin-top: 0;
+    padding-top: 30px !important;
+  }
+
+  /* -------------------------------------------------------------------------- */
+  /*                                    Cards                                   */
+  /* -------------------------------------------------------------------------- */
+
+  .flip-cards {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    flex-direction: column;
+    width: fit-content;
+    z-index: 2 !important;
+  }
+
+  @media screen and (min-width: 1100px) {
+    .flip-cards {
+      flex-direction: row;
+      justify-content: center;
+      width: 100%;
+    }
+  }
+
+  .flip-card {
+    display: flex;
+    justify-content: center;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 168px 5vw 0;
+    perspective: 600px;
+    width: 100vw !important;
+  }
+
+  .flip-card:first-of-type {
+    padding-top: 56px;
+  }
+
+  @media screen and (min-width: 1100px) {
+    .flip-card {
+      padding: 0 8px;
+      width: 33vw !important;
+    }
+
+    .flip-card:first-of-type {
+      padding-top: 0;
+    }
+  }
+
+  @media screen and (min-width: 1400px) {
+    .flip-card {
+      padding-right: 12px;
+      padding-left: 12px;
+      max-width: 474px !important;
+    }
+  }
+
+  .faces {
+    width: 100% !important;
+    max-width: 400px;
+    height: 600px !important;
+    transform-style: preserve-3d;
+    cursor: pointer;
+  }
+
+  .faces:hover .front .face__cta {
+    color: #b68600 !important;
+  }
+
+  .faces:hover .back .face__cta {
+    color: #901a1a !important;
+  }
+
+  @media screen and (min-width: 1100px) {
+    .faces {
+      /* width: 320px!important; */
+      height: 650px !important;
+    }
+  }
+
+  @media screen and (min-width: 1400px) {
+    .faces {
+      /* width: 400px!important; */
+      height: 750px !important;
+    }
+  }
+
+  .face {
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+    border-radius: 20px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    backface-visibility: hidden;
+  }
+
+  .face > * {
+    backface-visibility: hidden;
+  }
+
+  .front {
+    border: 8px solid #ebdbc1 !important;
+    color: #ebdbc1 !important;
+    background-color: #590000;
+    background-image: url("https://res.cloudinary.com/csisideaslab/image/upload/v1698694060/Shorthand/PONI%20Ukraine%20Nuclear%20Rhetoric%20Timeline/Kremlin-transparent.png");
+    background-size: 200%;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    /*added for mobile browsers*/
+    transform: translateZ(1px);
+  }
+
+  .front > * {
+    font-family: "Jost", sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 1.08em !important;
+    line-height: 1 !important;
+  }
+
+  @media screen and (min-width: 1400px) {
+    .front > * {
+      font-size: 1.1em !important;
+    }
+  }
+
+  .back {
+    transform: rotateY(180deg);
+  }
+
+  .face__cta {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    font-family: "Righteous", cursive !important;
+    font-weight: 700;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .front .face__cta {
+    left: 5%;
+    font-size: 160% !important;
+  }
+</style>
+
+<div class="sh-flip-cards-section flip-cards-section">
+  <div class="flip-cards-wrapper">
+    <div class="flip-wrapper flip-intro">
+      <h2 class="flip-cards-section__heading">
+        18 Months of Signaling:
+        <br />
+        Key Takeaways
+      </h2>
+      <div class="InlineElement InlineElement--Divider__container">
+        <hr
+          aria-hidden="true"
+          class="Theme-Layer-BodyText-Divider Theme-DividerSize-small"
+        />
+      </div>
+      <p class="flip-cards-section__text">
+        An analysis of the three phases of the war yields answers to the
+        critical questions posed at the outset of this report:
+      </p>
+      <p class="flip-cards-section__text">(Click to see answers)</p>
+    </div>
+    <div class="flip-wrapper flip-cards">
+      <div class="flip-card">
+        <div class="faces">
+          <div class="face front">
+            <p class="face__answer">
+              Russian nuclear signaling appears to have been intended to deter
+              three developments:
+            </p>
+            <ul class="face__answer">
+              <li class="">
+                Initially, Russian threats focused on direct NATO intervention
+                in Ukraine.
+              </li>
+              <li class="">
+                As the war dragged on, the focus of Russian threats shifted to
+                Western aid for Ukraine.
+              </li>
+              <li class="">
+                Russia also sought to avoid attacks on Crimea and the Russian
+                homeland.
+              </li>
+            </ul>
+            <p class="face__answer">
+              The Kremlin may have also sought to divide NATO, elicit sympathy
+              from developing states, or compel the West to constrain Ukrainian
+              counteroffensives through its nuclear signaling.
+            </p>
+            <p class="face__answer">
+              It is possible that Russian threats deterred NATO intervention and
+              slowed military aid to Ukraine. However, these threats have not
+              deterred incremental military aid for Ukraine.
+            </p>
+            <span class="face__cta">&lt;</span>
+          </div>
+          <div class="face back">
+            <h2 class="face__num">&#8212;1&#8212;</h2>
+            <h3 class="face__question">
+              <span class=""
+                ><em
+                  >To what end(s) has Russia used nuclear threats and what
+                  impact have they had?</em
+                ></span
+              >
+            </h3>
+            <span class="face__cta">&gt;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card">
+        <div class="faces">
+          <div class="face front">
+            <p class="face__answer">
+              Western deterrence signaling appears to have played a role in the
+              de-escalation of Russian rhetoric. This is particularly true
+              following a period of alarming signaling in October 2022. External
+              actors, namely India and China, also seem to have played a role.
+            </p>
+            <span class="face__cta">&lt;</span>
+          </div>
+          <div class="face back">
+            <h2 class="face__num">&#8212;2&#8212;</h2>
+            <h3 class="face__question">
+              <span class=""
+                ><em
+                  >Have Western efforts to prevent nuclear use been effective?
+                </em></span
+              >
+            </h3>
+            <span class="face__cta">&gt;</span>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card">
+        <div class="faces">
+          <div class="face front">
+            <p class="face__answer">
+              The Kremlin’s nuclear signaling was most intense when Russian
+              forces faced
+              <a
+                href="https://www.wsj.com/articles/russia-withdraws-more-forces-from-northeast-ukraine-as-kyiv-presses-advance-11662980194"
+                class="link--yellow"
+                target="_blank"
+                rel="noopener noreferrer"
+                >collapse</a
+              >
+              in the fall of 2022. There is reason to believe that Russian
+              nuclear threats will intensify, and the risks of nuclear
+              escalation might rise, if Russia faces a similar battlefield
+              situation in the future.
+            </p>
+            <p class="face__answer">
+              Russian nuclear rhetoric, however, is seemingly responsive to
+              international pressure. Russian rhetoric became
+              <a
+                href="https://mid.ru/en/foreign_policy/news/1836575/"
+                class="link--yellow"
+                target="_blank"
+                rel="noopener noreferrer"
+                >more conciliatory</a
+              >
+              in November 2022 after clear international warnings against
+              nuclear use in September and October.
+            </p>
+            <p class="face__answer">
+              The Kremlin also seems to care about its international image: at
+              international fora, Russian officials
+              <a
+                href="https://tass.ru/politika/16091483"
+                class="link--yellow"
+                target="_blank"
+                rel="noopener noreferrer"
+                >deny</a
+              >
+              that the country has threatened to use nuclear weapons and often
+              <a
+                href="https://www.wradio.com.co/2022/03/02/las-unidades-nacionalistas-de-ucrania-destruyeron-donetsk-y-lugansk-portavoz-del-ministerio-de-exteriores-de-rusia/"
+                class="link--yellow"
+                target="_blank"
+                rel="noopener noreferrer"
+                >strike</a
+              >
+              a comparatively reassuring tone when discussing nuclear risks with
+              non-Western media.
+            </p>
+            <span class="face__cta">&lt;</span>
+          </div>
+          <div class="face back">
+            <h2 class="face__num">&#8212;3&#8212;</h2>
+            <h3 class="face__question">
+              <span class=""
+                ><em
+                  >Would Putin consider using nuclear weapons if Russia were
+                  losing in Ukraine?
+                </em></span
+              >
+            </h3>
+            <span class="face__cta">&gt;</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/CSIS-iLab/gsap-plugins/minified/MorphSVGPlugin.min.js"></script>
+
+<script>
+  let flipCards = gsap.utils.toArray(".flip-card > .faces");
+
+  flipCards.forEach(function (card, index) {
+    let animation = gsap.timeline();
+    animation.to(card, { rotationY: 180 });
+    animation.progress(1);
+    card.animation = animation;
+    card.addEventListener("click", function () {
+      card.animation.reversed(!card.animation.reversed());
+    });
+  });
+</script>

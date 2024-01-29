@@ -1,0 +1,202 @@
+<style>
+  @import url("https://use.typekit.net/hjr4awy.css");
+
+  @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&display=swap");
+
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Adjust as needed */
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+
+  .container {
+    max-width: 50%;
+    color: #d5fdf9;
+    display: flex; /* Or use display: grid; */
+    flex-direction: column;
+    padding-right: 20px;
+  }
+
+  .flourish-embed {
+    width: 50%;
+  }
+
+  #title {
+    font-family: IBM Plex Sans, sans-serif;
+    font-size: 1.925rem;
+    font-weight: 700;
+  }
+
+  .text {
+    font-family: utopia-std, serif;
+    font-size: 1.375rem;
+  }
+
+  .inline-link {
+    color: #d5fdf9;
+  }
+
+  .info-icon {
+    position: relative;
+    display: inline-block;
+  }
+
+  #industrial-word {
+    color: #d5fdf9;
+    text-decoration: none;
+    border-bottom: 1px solid #d5fdf9;
+  }
+
+  .info-icon-link {
+    color: #d5fdf9;
+    text-decoration: none;
+    border-bottom: 1px solid #d5fdf9;
+  }
+
+  .info-icon::after {
+    content: "i";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: blue;
+    color: white;
+    font-family: sans-serif;
+    font-size: 0.7em;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+
+  /* Tooltip styling */
+  .tooltip-text {
+    visibility: hidden;
+    background-color: #fcfcfc;
+    color: #333;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 0;
+    font-size: 1rem;
+    padding: 20px 10px 20px 10px;
+
+    /* Positioning */
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Adjust if necessary */
+    left: 50%;
+    transform: translateX(-50%); /* Centers the tooltip */
+
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+
+    /* Allow text wrapping */
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
+
+  #artisanal {
+    min-width: 450px;
+    text-align: left;
+  }
+
+  #industrial {
+    min-width: 600px;
+    text-align: left;
+  }
+
+  #recreational {
+    min-width: 250px;
+  }
+
+  #sustenance {
+    min-width: 475px;
+    text-align: left;
+  }
+  /* Tooltip arrow */
+  .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%; /* Adjust if necessary */
+    left: 50%;
+    transform: translateX(-50%); /* Centers the arrow below the tooltip */
+    border-width: 5px;
+    border-style: solid;
+    border-color: #fcfcfc transparent transparent transparent; /* Match tooltip background color */
+  }
+  /* Show tooltip text on hover */
+  .info-icon:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }
+</style>
+<!--"container" holds the text-->
+<div class="wrapper">
+  <div class="container">
+    <p class="text">
+      Data from Sea Around Us on fish catch in the South China Sea show that
+      after sharp increases since the 1950s, fish catch has remained relatively
+      stagnant since the mid-1990s. This stagnation, despite continuing
+      increases in fishing effort, indicates that fish stocks are overexploited.
+    </p>
+    <p class="text">
+      Along with an overall increase in fishing effort, the way that most fish
+      in the South China Sea are caught has changed over time. Fishing can be
+      divided into four types:
+      <span class="info-icon"
+        ><a
+          class="info-icon-link"
+          href="https://news.mongabay.com/2023/01/mongabay-explains-whats-the-difference-between-artisanal-and-industrial-fishing/#:~:text=Broadly%20speaking%2C%20artisanal%20fishing%20is,catch%20larger%20volumes%20of%20fish."
+          target="_blank"
+          rel="noopener"
+          >artisanal</a
+        >
+        <span id="artisanal" class="tooltip-text"
+          >traditional fishing that uses relatively small, low-powered
+          boats</span
+        >
+      </span>
+      ,
+      <span class="info-icon"
+        ><span id="industrial-word">industrial</span>
+        <span id="industrial" class="tooltip-text"
+          >fishing that requires large vessels that make longer trips farther
+          out and catch larger volumes of fish</span
+        >
+      </span>
+      ,
+      <span class="info-icon"
+        ><a
+          class="info-icon-link"
+          href="https://www.noaa.gov/education/resource-collections/marine-life/fisheries-and-seafood"
+          target="_blank"
+          rel="noopener"
+          >recreational</a
+        >
+        <span id="recreational" class="tooltip-text"
+          >fishing for sport or pleasure</span
+        >
+      </span>
+      , and 
+      <span class="info-icon"
+        ><a
+          class="info-icon-link"
+          href="https://www.noaa.gov/education/resource-collections/marine-life/fisheries-and-seafood"
+          target="_blank"
+          rel="noopener"
+          >subsistence</a
+        >
+        <span id="sustenance" class="tooltip-text"
+          >fishing for personal, family, and community consumption or
+          sharing</span
+        >
+      </span>
+    </p>
+  </div>
+  <!--this iframe holds your other html/embed-->
+  <div class="flourish-embed" data-src="story/2118693?39773">
+    <script src="https://public.flourish.studio/resources/embed.js"></script></div>
+</div>

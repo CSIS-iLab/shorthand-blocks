@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      Audio Brief: China’s Engagement in the Global South with Lily McElwee
+    </title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&display=swap");
+
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: transparent;
+        font-family: "IBM Plex Sans", sans-serif;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      /* Mobile-first styling -- the default is for smalls screens */
+      .audio-player {
+        position: relative;
+        width: 100%; /* Full width on smaller screens */
+        height: 411px; /* Adjust height */
+        font-family: "IBM Plex Sans", sans-serif;
+        color: #fffefa; /* Text color - for title */
+        border-radius: 20px;
+      }
+
+      /* These styles apply on desktop */
+      @media (min-width: 900px) {
+        .audio-player {
+          margin: auto;
+          min-width: 390px;
+          max-width: 700px;
+          max-height: 400px;
+        }
+      }
+
+      #background-image-container {
+        position: absolute;
+        border-radius: 20px;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 95%; /* Adjust the height as needed */
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      #background-image {
+        width: 100%;
+        height: auto;
+      }
+
+      .controls-container {
+        position: absolute;
+        padding-top: 10px;
+        width: 100%;
+        height: auto;
+        border-radius: 20px;
+        background-color: #0d1e45; /* Background color for the white box */
+        z-index: 2;
+        bottom: 0;
+      }
+
+      #title {
+        margin: 5px 0 5px 20px;
+        max-width: 90%;
+        font-size: 1.6em;
+        font-weight: bold;
+      }
+
+      .controls {
+        position: static;
+        display: flex;
+        justify-content: space-around;
+        margin: 20px 0px 20px 0px;
+      }
+
+      button {
+        cursor: pointer;
+      }
+
+      #progressContainer {
+        width: calc(
+          100% - 40px
+        ); /* Subtract 40px from the total width: 20px left and 20px right */
+        height: 20px;
+        border-radius: 2px;
+        margin: 15px auto 0 auto;
+        background-color: #ffffff30;
+        position: relative;
+      }
+
+      #progressBar {
+        height: 100%;
+        border-radius: 2px;
+        background-color: #0066cc;
+        width: 0%;
+      }
+
+      .svg-icon {
+        width: 35px;
+        height: 35px;
+        margin: 10px;
+      }
+
+      .menu-icon {
+        width: 1em; /* 1em is equal to the current font size */
+        height: 1em; /* 1em is equal to the current font size */
+        margin-right: 0.5em; /* Adjust the space between the icon and the text */
+        vertical-align: middle; /* This will vertically center the icon with the text */
+      }
+
+      .filter-dark {
+        filter: invert(0%) sepia(6%) saturate(7%) hue-rotate(324deg)
+          brightness(99%) contrast(100%);
+      }
+
+      .filter-light {
+        filter: invert(100%) sepia(59%) saturate(541%) hue-rotate(298deg)
+          brightness(104%) contrast(105%);
+      }
+
+      .kebab-menu {
+        position: absolute;
+        top: 0; /* Align to the top of the controls-container */
+        right: 0; /* Align to the right of the controls-container */
+        padding: 5px; /* Add some space */
+      }
+
+      .menu-content {
+        display: none;
+        position: absolute;
+        right: 0; /* Align the dropdown to the right side of the kebab icon */
+        background-color: #f9f9f9;
+        min-width: 180px; /* Minimum width of the dropdown content */
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      .menu-content button {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        background: transparent;
+        border: 0;
+        width: 100%;
+        display: block; /* Stack buttons vertically */
+        text-align: left;
+      }
+
+      .menu-content button:hover {
+        background-color: #0a2458; /* Hover effect for buttons */
+        color: #fcfcfc;
+      }
+
+      .menu-content button:hover .menu-icon {
+        filter: invert(100%) sepia(2%) saturate(22%) hue-rotate(243deg)
+          brightness(107%) contrast(95%);
+      }
+
+      #menuContent {
+        display: none;
+      }
+
+      .playback-speed-menu {
+        position: absolute;
+        top: 0; /* Adjust this as needed */
+        right: 10px; /* Adjust to align with the kebab menu */
+        max-height: 200px;
+        background-color: #f9f9f9;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 2;
+        overflow-y: scroll;
+      }
+
+      .playback-speed-menu select {
+        padding: 5px;
+        border: 1px solid #ccc;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="audio-player" id="audioPlayer">
+      <!-- --------------------------------------------------- -->
+      <!--             Background Image Container              -->
+      <!-- --------------------------------------------------- -->
+      <div id="background-image-container">
+        <!-- ----------- BACKGROUND IMAGE GOES HERE ------------ -->
+        <img alt="Background Image" id="background-image" />
+      </div>
+      <!-- --------------------------------------------------- -->
+      <!--             Everything in the white box             -->
+      <!-- --------------------------------------------------- -->
+      <div class="controls-container">
+        <div class="audio-info">
+          <h2 id="title"></h2>
+        </div>
+        <audio id="audio"></audio>
+        <!-- ------------ This is the progress bar ------------- -->
+        <div id="progressContainer">
+          <div id="progressBar"></div>
+        </div>
+        <!-- ---------- These are the audio controls ----------- -->
+        <div class="controls">
+          <img
+            class="filter-light svg-icon"
+            id="skip-to-start"
+            alt="Skip to start"
+          />
+          <img
+            class="filter-light svg-icon"
+            id="skip-back"
+            alt="Skip back 10 seconds"
+          />
+          <img class="filter-light svg-icon" id="play-pause" alt="Play" />
+          <img
+            class="filter-light svg-icon"
+            id="skip-forward"
+            alt="Skip forward 10 seconds"
+          />
+          <img
+            class="filter-light svg-icon"
+            id="skip-to-end"
+            alt="Skip forward 10 seconds"
+          />
+          <!-- --- This is the menu for download, share, etc. ---- -->
+          <div class="kebab-menu">
+            <img class="filter-light svg-icon" id="menu-button" alt="Menu" />
+            <div class="menu-content" id="menuContent">
+              <button type="button" id="download-audio">
+                <img
+                  class="filter-dark menu-icon"
+                  alt="Download Icon"
+                  id="download-audio-icon"
+                />
+                Download Audio
+              </button>
+              <button type="button" id="download-transcript">
+                <img
+                  class="filter-dark menu-icon"
+                  id="download-transcript-icon"
+                  alt="Download Icon"
+                />
+                Download Transcript
+              </button>
+              <button type="button" id="share-audio">
+                <img
+                  class="filter-dark menu-icon"
+                  id="share-audio-icon"
+                  alt="Share Icon"
+                />
+                Share Audio
+              </button>
+              <button type="button" id="playback-speed">
+                <img
+                  class="filter-dark menu-icon"
+                  id="playback-speed-icon"
+                  alt="Playback Speed Icon"
+                />
+                Playback Speed
+              </button>
+            </div>
+            <!-- ----------- Menu for the playback speed ----------- -->
+            <div
+              class="menu-content playback-speed-menu"
+              id="playbackSpeedMenu"
+            >
+              <div id="playbackSpeed">
+                <button type="button" id="back-to-options">
+                  <img
+                    class="filter-dark menu-icon"
+                    id="back-to-options-icon"
+                    alt="Share Icon"
+                  />
+                  Back to Options
+                </button>
+                <button type="button" data-speed="0.25">0.25x</button>
+                <button type="button" data-speed="0.5">0.5x</button>
+                <button type="button" data-speed="0.75">0.75x</button>
+                <button type="button" data-speed="1" selected>
+                  1x (Normal)
+                </button>
+                <button type="button" data-speed="1.25">1.25x</button>
+                <button type="button" data-speed="1.5">1.5x</button>
+                <button type="button" data-speed="1.75">1.75x</button>
+                <button type="button" data-speed="2">2x</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let audioInfo = {
+          backgroundImageUrl:
+            "https://res.cloudinary.com/dz3ukgab7/image/upload/f_auto,q_auto/v1/GF%20Audio%20Briefs/GF_radial",
+          title:
+            "Audio Brief: China’s Engagement in the Global South with Lily McElwee",
+          audioUrl:
+            "https://res.cloudinary.com/dz3ukgab7/video/upload/fl_attachment/f_auto:video,q_auto/v1/GF%20Audio%20Briefs/China_LilyMcElwee",
+          transcriptUrl: "",
+        };
+        // var transcriptUrl = "";
+        // Replace with the actual URL or set to null if not available
+
+        var iconInfo = {
+          skipToStartIcon:
+            "https://res.cloudinary.com/csisideaslab/image/upload/v1706117793/Shorthand/Global%20Forecast/backward-3-svgrepo-com.svg",
+          skipBackIcon:
+            "https://res.cloudinary.com/csisideaslab/image/upload/v1706202122/Shorthand/Global%20Forecast/backward.svg",
+          playIcon:
+            "https://res.cloudinary.com/csisideaslab/image/upload/v1706117784/Shorthand/Global%20Forecast/play-svgrepo-com.svg",
+          pauseIcon:
+            "https://res.cloudinary.com/csisideaslab/image/upload/v1706119327/Shorthand/Global%20Forecast/pause-svgrepo-com.svg",
+          skipForwardIcon:
+            "https://res.cloudinary.com/csisideaslab/image/upload/v1706201954/Shorthand/Global%20Forecast/forward.svg",
+          skipToEndIcon:
+            "https://res.cloudinary.com/csisideaslab/image/upload/v1706117789/Shorthand/Global%20Forecast/forward-3-svgrepo-com.svg",
+          skipBackIcon:
+            "https://res.cloudinary.com/csisideaslab/image/upload/v1706201954/Shorthand/Global%20Forecast/backward.svg",
+          menuIcon:
+            "https://res.cloudinary.com/csisideaslab/image/upload/v1706120568/Shorthand/Global%20Forecast/kebab-menu-svgrepo-com.svg",
+          downloadIcon:
+            "https://res.cloudinary.com/csisideaslab/image/upload/v1706148613/Shorthand/Global%20Forecast/download-svgrepo-com.svg",
+          playbackSpeedIcon:
+            "https://res.cloudinary.com/csisideaslab/image/upload/v1706148589/Shorthand/Global%20Forecast/playback-speed-svgrepo-com.svg",
+          shareIcon:
+            "https://res.cloudinary.com/csisideaslab/image/upload/v1706148595/Shorthand/Global%20Forecast/share-alt-svgrepo-com.svg",
+          backToOptionsIcon:
+            "https://res.cloudinary.com/csisideaslab/image/upload/v1706148618/Shorthand/Global%20Forecast/left-arrow-svgrepo-com.svg",
+          checkmarkSVG:
+            '<img class="filter-dark menu-icon" src="https://res.cloudinary.com/csisideaslab/image/upload/v1706152179/Shorthand/Global%20Forecast/checkmark-svgrepo-com_1.svg" alt="Selected">',
+        };
+
+        document.title = audioInfo.title;
+
+        // background image
+        let backgroundImage = document.getElementById("background-image");
+        backgroundImage.src = audioInfo.backgroundImageUrl;
+
+        // audio information
+        let audio = document.getElementById("audio");
+        audio.src = audioInfo.audioUrl;
+        let title = document.getElementById("title");
+        title.innerHTML = audioInfo.title;
+        let progressBar = document.getElementById("progressBar");
+
+        /* --------- Update progress bar as audio plays --------- */
+        audio.addEventListener("timeupdate", () => {
+          var percentage = (audio.currentTime / audio.duration) * 100;
+          document.getElementById("progressBar").style.width = percentage + "%";
+        });
+
+        /* -------------- Toggle play/pause button -------------- */
+        let playPauseButton = document.getElementById("play-pause");
+        playPauseButton.src = iconInfo.playIcon;
+        playPauseButton.addEventListener("click", () => {
+          if (audio.paused) {
+            audio.play();
+            playPauseButton.src = iconInfo.pauseIcon; // Change to pause icon
+            playPauseButton.alt = "Pause";
+          } else {
+            audio.pause();
+            playPauseButton.src = iconInfo.playIcon; // Change to the play icon
+            playPauseButton.alt = "Play";
+          }
+        });
+
+        /* ------------------------------------------------------ */
+        /*                      Skip Buttons                      */
+        /* ------------------------------------------------------ */
+
+        let skipForwardButton = document.getElementById("skip-forward");
+        skipForwardButton.src = iconInfo.skipForwardIcon;
+        skipForwardButton.addEventListener("click", () => {
+          audio.currentTime += 10;
+        });
+
+        let skipBackButton = document.getElementById("skip-back");
+        skipBackButton.src = iconInfo.skipBackIcon;
+        skipBackButton.addEventListener("click", () => {
+          audio.currentTime -= 10;
+        });
+
+        let skipToStartButton = document.getElementById("skip-to-start");
+        skipToStartButton.src = iconInfo.skipToStartIcon;
+        skipToStartButton.addEventListener("click", () => {
+          audio.currentTime = 0;
+        });
+
+        let skipToEndButton = document.getElementById("skip-to-end");
+        skipToEndButton.src = iconInfo.skipToEndIcon;
+        skipToEndButton.addEventListener("click", () => {
+          audio.currentTime = audio.duration;
+        });
+
+        /* ------------------------------------------------------ */
+        /*                       Kebab Menu                       */
+        /* ------------------------------------------------------ */
+
+        /* -------------- Kebab menu show/hide -------------- */
+        let menuButton = document.getElementById("menu-button");
+        menuButton.src = iconInfo.menuIcon;
+        let menuContent = document.getElementById("menuContent");
+
+        menuButton.addEventListener("click", () => {
+          menuContent.style.display =
+            menuContent.style.display === "none" ? "block" : "none";
+        });
+
+        /* ------------------------------------------------------ */
+        /*                     Download Audio                     */
+        /* ------------------------------------------------------ */ let downloadAudioIcon =
+          document.getElementById("download-audio-icon");
+        downloadAudioIcon.src = iconInfo.downloadIcon;
+        document
+          .getElementById("download-audio")
+          .addEventListener("click", () => {
+            var link = document.createElement("a");
+            /* --------------- LINK TO YOUR AUDIO HERE -------------- */
+            link.href = audioInfo.audioUrl;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+          });
+
+        /* ------------------------------------------------------ */
+        /*                   Download Transcript                  */
+        /* ------------------------------------------------------ */
+        let downloadTranscriptIcon = document.getElementById(
+          "download-transcript-icon"
+        );
+        downloadTranscriptIcon.src = iconInfo.downloadIcon;
+
+        // Function to update the visibility of the download transcript button
+        function updateTranscriptButtonVisibility() {
+          var downloadTranscriptButton = document.getElementById(
+            "download-transcript"
+          );
+          if (audioInfo.transcriptUrl) {
+            downloadTranscriptButton.style.display = "block"; // Show the button
+            downloadTranscriptButton.addEventListener(
+              "click",
+              downloadTranscript
+            );
+          } else {
+            downloadTranscriptButton.style.display = "none"; // Hide the button
+          }
+        }
+
+        // Function to handle transcript download
+        function downloadTranscript() {
+          var link = document.createElement("a");
+          link.href = audioInfo.transcriptUrl;
+          link.setAttribute("target", "_blank");
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        }
+
+        updateTranscriptButtonVisibility();
+
+        /* ------------------------------------------------------ */
+        /*                       Share Audio                      */
+        /* ------------------------------------------------------ */
+        let shareAudioIcon = document.getElementById("share-audio-icon");
+        shareAudioIcon.src = iconInfo.shareIcon;
+
+        document
+          .getElementById("share-audio")
+          .addEventListener("click", function () {
+            // Your share audio functionality, e.g., using the Web Share API
+            if (navigator.share) {
+              navigator
+                .share({
+                  title: "Audio Title",
+                  url: audioInfo.audioUrl,
+                })
+                .then(() => {
+                  console.log("Thanks for sharing!");
+                })
+                .catch(console.error);
+            } else {
+              // Fallback sharing method, e.g., copying the URL to the clipboard
+              if (navigator.clipboard) {
+                navigator.clipboard
+                  .writeText(audio.src)
+                  .then(function () {
+                    console.log("URL copied to clipboard");
+                  })
+                  .catch(function (err) {
+                    console.error("Unable to copy URL to clipboard: ", err);
+                  });
+              } else {
+                // Clipboard API not supported, you can use an alternative method here
+                console.log(
+                  "Clipboard API not supported. Implement another sharing method."
+                );
+              }
+            }
+          });
+
+        /* ------------------------------------------------------ */
+        /*                  Handle playback speed                 */
+        /* ------------------------------------------------------ */
+        let backToOptionsIcon = document.getElementById("back-to-options-icon");
+        backToOptionsIcon.src = iconInfo.backToOptionsIcon;
+
+        let playbackSpeedIcon = document.getElementById("playback-speed-icon");
+        playbackSpeedIcon.src = iconInfo.playbackSpeedIcon;
+
+        let playbackSpeedMenu = document.getElementById("playbackSpeedMenu");
+
+        document
+          .getElementById("back-to-options")
+          .addEventListener("click", function () {
+            menuContent.style.display = "block";
+            playbackSpeedMenu.style.display = "none";
+          });
+
+        document
+          .getElementById("playback-speed")
+          .addEventListener("click", function () {
+            menuContent.style.display = "none";
+            playbackSpeedMenu.style.display = "block";
+          });
+
+        var speedOptions = document.querySelectorAll(
+          ".playback-speed-menu button[data-speed]"
+        );
+
+        speedOptions.forEach(function (button) {
+          button.addEventListener("click", function () {
+            var speed = this.getAttribute("data-speed");
+            audio.playbackRate = parseFloat(speed);
+
+            // Remove checkmarks from all buttons
+            speedOptions.forEach(function (otherButton) {
+              otherButton.innerHTML = otherButton.textContent;
+            });
+
+            // Add checkmark to the clicked button
+            this.innerHTML = iconInfo.checkmarkSVG + this.textContent;
+          });
+        });
+
+        let defaultSpeedButton = document.querySelector(
+          "button[data-speed='1']"
+        );
+        defaultSpeedButton.innerHTML =
+          iconInfo.checkmarkSVG + defaultSpeedButton.textContent;
+
+        defaultSpeedButton.classList.add("selected");
+
+        /* ------------------------------------------------------ */
+        /*            Close menu if user clicks outside           */
+        /* ------------------------------------------------------ */
+
+        // This function will check if the clicked element is outside the menu
+        function handleClickOutside(event) {
+          var kebabMenuButton = document.querySelector(".kebab-menu");
+
+          // Check if the clicked area is outside the menu and not the kebab button
+          if (
+            !menuContent.contains(event.target) &&
+            !kebabMenuButton.contains(event.target)
+          ) {
+            menuContent.style.display = "none";
+            // Also hide the playback speed menu if it's open
+            document.getElementById("playbackSpeedMenu").style.display = "none";
+          }
+        }
+
+        // Attach the listener to the document
+        document.addEventListener("click", handleClickOutside);
+
+        // Prevent the menu from closing when clicking on the menu itself
+        menuContent.addEventListener("click", function (event) {
+          event.stopPropagation();
+        });
+      });
+    </script>
+  </body>
+</html>

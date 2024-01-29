@@ -1,0 +1,418 @@
+<style>
+  .sh-scrolly-video {
+    background-color: #e2dfa9 !important;
+  }
+  .scroll-gallery {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .scroll-gallery__left {
+    width: 100% !important;
+    color: #421e41 !important;
+    font-size: 20px;
+  }
+
+  .scroll-gallery__right {
+    /*height: 50vh !important;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0px 7px 10px 8px rgba(226, 223, 169, 1)!important;*/
+    display: none;
+  }
+
+  /*.scroll-gallery__right:after {
+  content: "";
+  display: block;
+  height: 100%!important;
+  position: absolute;
+  top: 0!important;
+  width: 100%!important;
+  box-shadow: inset 0px -7px 10px 8px rgba(226, 223, 169, 1)!important;
+}*/
+
+  .scroll-gallery__left-content {
+    margin: 240px auto !important;
+    width: 80% !important;
+  }
+
+  .scroll-gallery__point {
+    position: relative;
+    height: 100%;
+    min-height: 100vh !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /*.scroll-gallery__point:not(:last-of-type) {
+  margin-bottom: 60% !important;
+}*/
+
+  .scroll-gallery__point * {
+    z-index: 2 !important;
+  }
+
+  .scroll-gallery h2 {
+    font-family: "Limelight", cursive;
+    font-size: 600% !important;
+    font-weight: 400;
+    margin: 0;
+    margin-bottom: -14px;
+  }
+
+  .scroll-gallery h3 {
+    font-family: "Limelight", cursive;
+    font-size: 160% !important;
+    margin: 0;
+  }
+
+  .scroll-gallery p {
+    font-family: "Roboto", sans-serif;
+    font-size: 17px !important;
+    font-weight: 400;
+  }
+
+  .scroll-gallery a {
+    color: #a15630 !important;
+    transition: all 0.3s ease-in-out;
+    text-decoration: underline transparent;
+  }
+
+  .scroll-gallery a:hover {
+    color: #331832 !important;
+    text-decoration: underline;
+  }
+
+  .scroll-gallery__point--1 h2 {
+    color: rgb(105, 77, 117);
+  }
+
+  .scroll-gallery__point--2 h2 {
+    color: rgb(39, 82, 110);
+  }
+
+  .scroll-gallery__point--3 h2 {
+    color: rgb(133, 89, 24);
+  }
+
+  .scroll-gallery__point--4 h2 {
+    color: rgb(39, 81, 60);
+  }
+
+  .scroll-gallery__point--5 h2 {
+    color: rgb(110, 43, 43);
+  }
+
+  .video-scroll {
+    height: 50vh !important;
+    object-fit: cover;
+  }
+
+  .pin-spacer {
+    z-index: 2 !important;
+  }
+
+  @media (min-width: 620px) {
+    .scroll-gallery__right {
+      height: 50vh !important;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-shadow: 0px 7px 10px 8px rgba(226, 223, 169, 1) !important;
+    }
+
+    .scroll-gallery__point:not(:last-of-type) {
+      margin-bottom: 60% !important;
+    }
+
+    .scroll-gallery p {
+      font-size: 18px !important;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .scroll-gallery {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .scroll-gallery__left {
+      width: 40% !important;
+    }
+
+    .scroll-gallery__right {
+      height: 100vh !important;
+      width: 50%;
+      box-shadow: unset !important;
+    }
+
+    .scroll-gallery__right:after {
+      box-shadow: unset !important;
+    }
+
+    .scroll-gallery__point {
+      height: 100vh !important;
+    }
+
+    .scroll-gallery h3 {
+      font-size: 180% !important;
+    }
+
+    .video-scroll {
+      object-position: 60% top;
+      overflow: visible;
+      height: 100vh !important;
+    }
+
+    .pin-spacer {
+      z-index: unset !important;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .scroll-gallery__left {
+      width: 50% !important;
+    }
+
+    .scroll-gallery p {
+      font-size: 20px !important;
+    }
+
+    .video-scroll {
+      object-position: 55% top;
+    }
+  }
+
+  @media (min-width: 1750px) {
+    .scroll-gallery p {
+      font-size: 22px !important;
+    }
+
+    .video-scroll {
+      object-position: 55% bottom;
+    }
+  }
+</style>
+
+<div class="scroll-gallery">
+  <div class="scroll-gallery__left">
+    <div class="scroll-gallery__left-content">
+      <div class="scroll-gallery__point">
+        <h3>An Ecosystem Approach to Innovation</h3>
+
+        <hr
+          aria-hidden="true"
+          class="Theme-Layer-BodyText-Divider Theme-BackgroundColorCustom-dWXqir"
+        />
+
+        <p>
+          Throughout this postwar period, U.S. innovation strategy has relied on
+          a relatively simple linear model of innovation.
+        </p>
+
+        <p>
+          This model concentrated on public funding of basic research at the
+          front end. From there, private actors would take the lead in applying
+          that research to new products and bringing them to the market.
+        </p>
+
+        <p>
+          Through the years, our understanding of the innovation process has
+          advanced. Instead of a linear process, innovation is now understood as
+          an “ecosystem” in which various networks each play a role in
+          developing new technologies and bringing them to market. For
+          innovation to move at its full potential, each of these networks need
+          to operate individually as well as connect with the other networks
+          through partnerships across the innovation ecosystem.
+        </p>
+      </div>
+      <div class="scroll-gallery__point scroll-gallery__point--1">
+        <h2>1.</h2>
+        <h3>Research Networks</h3>
+        <hr
+          aria-hidden="true"
+          class="Theme-Layer-BodyText-Divider Theme-BackgroundColorCustom-dWXqir"
+        />
+        <p>
+          American universities, research institutes, and national labs are rich
+          sources of new ideas and concepts.
+        </p>
+      </div>
+      <div class="scroll-gallery__point scroll-gallery__point--2">
+        <h2>2.</h2>
+        <h3>Financial Networks</h3>
+        <hr
+          aria-hidden="true"
+          class="Theme-Layer-BodyText-Divider Theme-BackgroundColorCustom-dWXqir"
+        />
+        <p>
+          Banks, venture capital funds, and other sources of capital provide the
+          wherewithal for entrepreneurs to fund and develop these concepts into
+          products and services for the market.
+        </p>
+      </div>
+      <div class="scroll-gallery__point scroll-gallery__point--3">
+        <h2>3.</h2>
+        <h3>Entrepreneurial Networks</h3>
+        <hr
+          aria-hidden="true"
+          class="Theme-Layer-BodyText-Divider Theme-BackgroundColorCustom-dWXqir"
+        />
+        <p>
+          Start-ups, innovative firms, and small and medium manufacturers are
+          key actors in the innovation system, drawing on new ideas, seeking
+          funding, and driving innovation to the marketplace.
+        </p>
+      </div>
+      <div class="scroll-gallery__point scroll-gallery__point--4">
+        <h2>4.</h2>
+        <h3>Educational and Training Networks</h3>
+        <hr
+          aria-hidden="true"
+          class="Theme-Layer-BodyText-Divider Theme-BackgroundColorCustom-dWXqir"
+        />
+        <p>
+          Universities, colleges, and vocational institutes provide the skills
+          and workforce needed by industry to scale up and produce new products
+          and services.
+        </p>
+      </div>
+      <div class="scroll-gallery__point scroll-gallery__point--5">
+        <h2>5.</h2>
+        <h3>Manufacturing and Distribution Networks</h3>
+        <hr
+          aria-hidden="true"
+          class="Theme-Layer-BodyText-Divider Theme-BackgroundColorCustom-dWXqir"
+        />
+        <p>
+          Firms that make innovative products and services and find and develop
+          markets are an integral part of the innovation system. R&amp;D and
+          manufacturing are tightly intertwined—it is often not possible to
+          design a product without understanding how it could be manufactured.
+          Feedback from manufacturers and markets provides important feedback
+          and financial returns for other stakeholders within the innovation
+          system.
+        </p>
+      </div>
+      <div class="scroll-gallery__point">
+        <h3>A Complete Ecosystem</h3>
+        <hr
+          aria-hidden="true"
+          class="Theme-Layer-BodyText-Divider Theme-BackgroundColorCustom-dWXqir"
+        />
+        <p>
+          A healthy innovation ecosystem contains strong, dynamic, and
+          distributed networks, with effective connections across networks.
+          These make the system more resilient, more adaptive, and more capable
+          of making use of the knowledge within the system—especially when
+          compared to more planned systems. American traditions in individual
+          initiative and entrepreneurship, combined with what Alexis de
+          Tocqueville
+          <a
+            href="https://www.amazon.com/Democracy-America-Alexis-Tocqueville/dp/0226805360"
+            >called</a
+          >
+          “the spirit of association,” give the United States an innate
+          advantage in building these innovation networks.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-gallery__right">
+    <video
+      muted
+      playsinline
+      class="video-scroll"
+      src="https://res.cloudinary.com/csisideaslab/video/upload/v1693581840/Shorthand/Reviving%20a%20Tradition/output_960_mobile.mp4"
+    ></video>
+  </div>
+</div>
+
+<script>
+  //SCROLLY VIDEO SCRIPT
+  //--- Credit to @shshaw for orginal video scroll code - https://codepen.io/shshaw/pen/vYKBPbv/9e810322d70c306de2d18237d0cb2d78
+
+  console.clear();
+  /* The encoding is super important here to enable frame-by-frame scrubbing. */
+
+  // ffmpeg -i ~/Downloads/Toshiba\ video/original.mov -movflags faststart -vcodec libx264 -crf 23 -g 1 -pix_fmt yuv420p output.mp4
+  // ffmpeg -i ~/Downloads/Toshiba\ video/original.mov -vf scale=960:-1 -movflags faststart -vcodec libx264 -crf 20 -g 1 -pix_fmt yuv420p output_960.mp4
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const details = gsap.utils.toArray(".scroll-gallery__point");
+
+  let videoScroll = document.querySelector(".video-scroll"),
+    frameNumber = 0,
+    src = videoScroll.currentSrc || videoScroll.src;
+
+  const times = [
+    0, 7.168171, 14.931613, 17.992837, 20.948853, 24.130003, 27.125, 31.142857,
+    32,
+  ];
+
+  videoScrollTL = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".scroll-gallery",
+      pin: ".scroll-gallery__right",
+      start: "top top",
+      end: "bottom bottom",
+    },
+  });
+
+  details.forEach((detail, index) => {
+    let headline = detail.querySelector("h2");
+
+    timeTL = gsap.timeline();
+    timeTL.fromTo(
+      videoScroll,
+      { currentTime: times[index] },
+      { currentTime: times[index + 1], ease: "none" }
+    );
+
+    ScrollTrigger.create({
+      trigger: detail,
+      start: "top 90%",
+      end: "bottom 90%",
+      scrub: true,
+      animation: timeTL,
+    });
+  });
+
+  /* Make sure the video is 'activated' on iOS */
+  function once(el, event, fn, opts) {
+    var onceFn = function (e) {
+      el.removeEventListener(event, onceFn);
+      fn.apply(this, arguments);
+    };
+    el.addEventListener(event, onceFn, opts);
+    return onceFn;
+  }
+
+  once(document.documentElement, "touchstart", function (e) {
+    videoScroll.play();
+    videoScroll.pause();
+  });
+
+  //When first coded, the Blobbing was important to ensure the browser wasn't dropping previously played segments, but it doesn't seem to be a problem now. Possibly based on memory availability?
+  setTimeout(function () {
+    if (window["fetch"]) {
+      fetch(src)
+        .then(function (response) {
+          return response.blob();
+        })
+        .then(function (response) {
+          var blobURL = URL.createObjectURL(response);
+          var t = videoScroll.currentTime;
+          once(document.documentElement, "touchstart", function (e) {
+            videoScroll.setAttribute("src", blobURL);
+            videoScroll.currentTime = t + 0.01;
+          });
+        });
+    }
+  }, 0);
+</script>
