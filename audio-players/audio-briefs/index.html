@@ -108,10 +108,12 @@
         width: 0%;
       }
 
-      .svg-icon {
+      .controls-icon{
         width: 35px;
         height: 35px;
         margin: 10px;
+        filter: invert(100%) sepia(59%) saturate(541%) hue-rotate(298deg)
+          brightness(104%) contrast(105%);
       }
 
       .menu-icon {
@@ -119,17 +121,10 @@
         height: 1em; /* 1em is equal to the current font size */
         margin-right: 0.5em; /* Adjust the space between the icon and the text */
         vertical-align: middle; /* This will vertically center the icon with the text */
-      }
-
-      .filter-dark {
         filter: invert(0%) sepia(6%) saturate(7%) hue-rotate(324deg)
           brightness(99%) contrast(100%);
       }
 
-      .filter-light {
-        filter: invert(100%) sepia(59%) saturate(541%) hue-rotate(298deg)
-          brightness(104%) contrast(105%);
-      }
 
       .kebab-menu {
         position: absolute;
@@ -215,33 +210,33 @@
         <!-- ---------- These are the audio controls ----------- -->
         <div class="controls">
           <img
-            class="filter-light svg-icon"
+            class="controls-icon"
             id="skip-to-start"
             alt="Skip to start"
           />
           <img
-            class="filter-light svg-icon"
+            class="controls-icon"
             id="skip-back"
             alt="Skip back 10 seconds"
           />
-          <img class="filter-light svg-icon" id="play-pause" alt="Play" />
+          <img class="controls-icon" id="play-pause" alt="Play" />
           <img
-            class="filter-light svg-icon"
+            class="controls-icon"
             id="skip-forward"
             alt="Skip forward 10 seconds"
           />
           <img
-            class="filter-light svg-icon"
+            class="controls-icon"
             id="skip-to-end"
             alt="Skip forward 10 seconds"
           />
           <!-- --- This is the menu for download, share, etc. ---- -->
           <div class="kebab-menu">
-            <img class="filter-light svg-icon" id="menu-button" alt="Menu" />
+            <img class="controls-icon" id="menu-button" alt="Menu" />
             <div class="menu-content" id="menuContent">
               <button type="button" id="download-audio">
                 <img
-                  class="filter-dark menu-icon"
+                  class="menu-icon"
                   alt="Download Icon"
                   id="download-audio-icon"
                 />
@@ -249,7 +244,7 @@
               </button>
               <button type="button" id="download-transcript">
                 <img
-                  class="filter-dark menu-icon"
+                  class="menu-icon"
                   id="download-transcript-icon"
                   alt="Download Icon"
                 />
@@ -257,7 +252,7 @@
               </button>
               <button type="button" id="share-audio">
                 <img
-                  class="filter-dark menu-icon"
+                  class="menu-icon"
                   id="share-audio-icon"
                   alt="Share Icon"
                 />
@@ -265,7 +260,7 @@
               </button>
               <button type="button" id="playback-speed">
                 <img
-                  class="filter-dark menu-icon"
+                  class="menu-icon"
                   id="playback-speed-icon"
                   alt="Playback Speed Icon"
                 />
@@ -280,7 +275,7 @@
               <div id="playbackSpeed">
                 <button type="button" id="back-to-options">
                   <img
-                    class="filter-dark menu-icon"
+                    class="menu-icon"
                     id="back-to-options-icon"
                     alt="Share Icon"
                   />
@@ -308,14 +303,13 @@
         let audioInfo = {
           backgroundImageUrl:
             "https://res.cloudinary.com/dz3ukgab7/image/upload/f_auto,q_auto/v1/GF%20Audio%20Briefs/GF_radial",
+          backgroundColor: "#050f27",
           title:
             "Audio Brief: China’s Engagement in the Global South with Lily McElwee",
           audioUrl:
-            "https://res.cloudinary.com/dz3ukgab7/video/upload/fl_attachment/f_auto:video,q_auto/v1/GF%20Audio%20Briefs/China_LilyMcElwee",
+            "https://res.cloudinary.com/dz3ukgab7/video/upload/f_auto:video,q_auto/v1/GF%20Audio%20Briefs/China_LilyMcElwee",
           transcriptUrl: "",
         };
-        // var transcriptUrl = "";
-        // Replace with the actual URL or set to null if not available
 
         var iconInfo = {
           skipToStartIcon:
@@ -348,16 +342,34 @@
 
         document.title = audioInfo.title;
 
-        // background image
-        let backgroundImage = document.getElementById("background-image");
-        backgroundImage.src = audioInfo.backgroundImageUrl;
-
         // audio information
         let audio = document.getElementById("audio");
         audio.src = audioInfo.audioUrl;
         let title = document.getElementById("title");
         title.innerHTML = audioInfo.title;
         let progressBar = document.getElementById("progressBar");
+
+        /* --------- Conditionally render bg image ------------ */
+        function updateImage(imageUrl) {
+          let backgroundImage = document.getElementById("background-image");
+          let container = document.getElementById("background-image-container");
+
+          if (audioInfo.backgroundImageUrl) {
+            // If the image URL is present, set the src and alt text
+            backgroundImage.src = audioInfo.backgroundImageUrl;
+            backgroundImage.alt = "Background Image";
+            backgroundImage.style.display = ""; // Make sure the image is not hidden via CSS
+          } else {
+            // If the image URL is not present, hide the image element or set the src to empty
+            backgroundImage.src = "";
+            backgroundImage.alt = "";
+            backgroundImage.style.display = "none";
+            container.style.backgroundColor = audioInfo.backgroundColor;
+          }
+        }
+
+        // Example usage of the function
+        updateImage(audioInfo.backgroundImageUrl); // Call this with an empty string to hide the image and alt text
 
         /* --------- Update progress bar as audio plays --------- */
         audio.addEventListener("timeupdate", () => {
@@ -431,8 +443,11 @@
           .getElementById("download-audio")
           .addEventListener("click", () => {
             var link = document.createElement("a");
-            /* --------------- LINK TO YOUR AUDIO HERE -------------- */
-            link.href = audioInfo.audioUrl;
+            let downloadUrl = audioInfo.audioUrl.replace(
+              "upload/",
+              "upload/fl_attachment/"
+            );
+            link.href = downloadUrl;
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
@@ -487,7 +502,7 @@
             if (navigator.share) {
               navigator
                 .share({
-                  title: "Audio Title",
+                  title: audioInfo.title,
                   url: audioInfo.audioUrl,
                 })
                 .then(() => {

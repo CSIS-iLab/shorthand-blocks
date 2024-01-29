@@ -19,6 +19,10 @@
         margin: auto;
       }
 
+      #myAudio {
+        display: none;
+      }
+
       #audioParagraph,
       #highlight {
         color: #fff;
@@ -77,6 +81,17 @@
         line-height: 1.5;
         vertical-align: top;
       }
+
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+      }
     </style>
   </head>
   <body class="main">
@@ -90,10 +105,12 @@
         <audio
           id="myAudio"
           src="https://graphics.axios.com/2023-08-tanzania-school/audio/collin-clip-2.m4a"
-          style="display: none"
         ></audio>
-        <button onClick="play()">
+        <button type="button" onClick="play()">
+          <span class="visually-hidden">Play</span>
           <svg
+            aria-hidden="true"
+            focusable="falase"
             id="playIcon"
             xmlns="http://www.w3.org/2000/svg"
             width="1em"
