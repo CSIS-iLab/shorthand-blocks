@@ -61,6 +61,7 @@ body {
 
 /* Caption text */
 .text {
+  /* visibility: hidden; */
   color: white;
   font-size: 18px;
   margin-bottom: 12px;
@@ -68,6 +69,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  display: none;
 }
 
 /* Fading animation */
@@ -86,7 +88,7 @@ body {
 #myBar {
   width: 0%;
   height: 3px;
-  background-color: white;
+  background-color: #425D65;
 }
 
 
