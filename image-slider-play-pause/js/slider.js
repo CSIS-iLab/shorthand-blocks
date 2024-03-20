@@ -2,7 +2,7 @@ var slideIndex = 1
 var playPause = true
 var timerVar
 var scrubberVar
-var intervalDuration = 5000
+var intervalDuration = 1000
 var i = 0
 const presentationSize = document.getElementsByClassName("mySlides").length
 const playPauseButtonIcon = document.getElementById("play-pause-icon")
