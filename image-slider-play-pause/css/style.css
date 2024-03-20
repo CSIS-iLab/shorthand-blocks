@@ -87,8 +87,8 @@ body {
 
 #myBar {
   width: 0%;
-  height: 3px;
-  background-color: #425D65;
+  height: 0;
+  background-color: #3E5055;
 }
 
 
