@@ -1,4 +1,8 @@
-* {box-sizing:border-box; font-family: 'Roboto', sans-serif;}
+* {box-sizing:border-box; font-family: 'Roboto', sans-serif; margin: 0; padding: 0;}
+
+body {
+  background-color: rgba(0,30,38,1);
+}
 
 .main-container {
   margin: 0;
@@ -57,7 +61,7 @@
 
 /* Caption text */
 .text {
-  color: black;
+  color: white;
   font-size: 18px;
   margin-bottom: 12px;
   width: 100%;
