@@ -6,6 +6,30 @@ var intervalDuration = 1000
 var i = 0
 const presentationSize = document.getElementsByClassName("mySlides").length
 const playPauseButtonIcon = document.getElementById("play-pause-icon")
+
+
+
+
+// Function to create and append slides
+function createSlides() {
+  const container = document.querySelector(".slideshow-container")
+
+  for (let year = 2002; year <= 2023; year++) {
+    const slide = document.createElement("div")
+    slide.className = "mySlides fade"
+
+    const image = document.createElement("img")
+    image.alt = year.toString()
+    image.src = `https://res.cloudinary.com/csisideaslab/image/upload/v1711375443/Shorthand/Surviving%20Scarcity/groundwater-timelapse-pics/April-${year}.jpg`
+    image.style.width = "100%"
+
+    slide.appendChild(image)
+    container.appendChild(slide)
+  }
+}
+// Call the function to create slides
+createSlides()
+
 showSlides(slideIndex)
 
 // Next/previous controls
