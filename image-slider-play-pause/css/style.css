@@ -9,7 +9,7 @@ body {
   background-color: rgba(0, 30, 38, 1);
 }
 
-.test {
+.wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
