@@ -19,7 +19,7 @@ function createSlides() {
     slide.className = "mySlides fade"
 
     const image = document.createElement("img")
-    image.alt = year.toString()
+    image.alt = "April " + year.toString()
     image.src = `https://res.cloudinary.com/csisideaslab/image/upload/v1711375443/Shorthand/Surviving%20Scarcity/groundwater-timelapse-pics/April-${year}.jpg`
     image.style.width = "100%"
 
