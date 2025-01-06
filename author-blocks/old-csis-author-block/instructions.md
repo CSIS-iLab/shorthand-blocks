@@ -1,6 +1,6 @@
 # What is this?
 
-An html/CSS grid for ceating an author block in Shorthand.com. Based on the author block from the old CSIS.org ([example](https://www.csis.org/analysis/improved-export-controls-enforcement-technology-needed-us-national-security)).
+An html/CSS grid for ceating an author block in Shorthand.com. Based on the author block from the old CSIS.org ([example]([https://www.csis.org/analysis/improved-export-controls-enforcement-technology-needed-us-national-security](https://web.archive.org/web/20221205152917/https://www.csis.org/analysis/improved-export-controls-enforcement-technology-needed-us-national-security))).
 
 The style no longer matches CSIS.org but it's a good place to start - there is a color background for each photo that can change on hover, as well as an underline for the author's name that can appear on hover. The photos appear in a grid and the grid is responsive for all screen sizes. 
 
