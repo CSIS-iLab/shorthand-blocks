@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom tabs</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="tabset">
+    <!-- Tab 1 -->
+    <input type="radio" name="tabset" id="tab1" aria-controls="humans" checked>
+    <label for="tab1">Cases in Humans</label>
+    <!-- Tab 2 -->
+    <input type="radio" name="tabset" id="tab2" aria-controls="bird-flocks">
+    <label for="tab2">Bird Flocks</label>
+    <!-- Tab 3 -->
+    <input type="radio" name="tabset" id="tab3" aria-controls="dairy-herds">
+    <label for="tab3">Dairy Herds</label>
+    <!-- Tab 4 -->
+    <input type="radio" name="tabset" id="tab4" aria-controls="wild-mammals">
+    <label for="tab4">Wild Mammals</label>
+    <div class="tab-panels">
+      <section id="humans" class="tab-panel">
+        <div class="flourish-embed flourish-map" data-src="visualisation/20863828?39773">
+          <script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img
+              src="https://public.flourish.studio/visualisation/20863828/thumbnail" width="100%"
+              alt="map visualization" /></noscript>
+        </div>
+      </section>
+      <section id="bird-flocks" class="tab-panel">
+        <div class="flourish-embed flourish-map" data-src="visualisation/20863832?39773">
+          <script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img
+              src="https://public.flourish.studio/visualisation/20863832/thumbnail" width="100%"
+              alt="map visualization" /></noscript>
+        </div>
+      </section>
+      <section id="dairy-herds" class="tab-panel">
+        <div class="flourish-embed flourish-map" data-src="visualisation/20863818?39773">
+          <script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img
+              src="https://public.flourish.studio/visualisation/20863818/thumbnail" width="100%"
+              alt="map visualization" /></noscript>
+        </div>
+      </section>
+      <section id="wild-mammals" class="tab-panel">
+        <div class="flourish-embed flourish-chart" data-src="visualisation/20863666?39773">
+          <script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img
+              src="https://public.flourish.studio/visualisation/20863666/thumbnail" width="100%"
+              alt="chart visualization" /></noscript>
+        </div>
+      </section>
+    </div>
+
+  </div>
+</body>
+
+</html>
