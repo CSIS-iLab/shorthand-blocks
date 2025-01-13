@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Pontano+Sans:wght@300..700&family=Tsukimi+Rounded&family=Varta:wght@300..700&display=swap');
+
+:root {
+  --main-bg-color: rgba(9,19,29,1);
+  --main-line-color: rgba(0, 84, 164,1);
+  --green-color-font: rgba(24,205,107,1);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 30px;
+}
+
+.tabset {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 65em;
+}
+
+/*
+ CSS for the main interaction
+*/
+.tabset > input[type="radio"] {
+  position: absolute;
+  left: -200vw;
+}
+
+.tabset .tab-panel {
+  display: none;
+}
+
+.tabset > input:first-child:checked ~ .tab-panels > .tab-panel:first-child,
+.tabset > input:nth-child(3):checked ~ .tab-panels > .tab-panel:nth-child(2),
+.tabset > input:nth-child(5):checked ~ .tab-panels > .tab-panel:nth-child(3),
+.tabset > input:nth-child(7):checked ~ .tab-panels > .tab-panel:nth-child(4),
+.tabset > input:nth-child(9):checked ~ .tab-panels > .tab-panel:nth-child(5),
+.tabset > input:nth-child(11):checked ~ .tab-panels > .tab-panel:nth-child(6) {
+  display: block;
+}
+
+/*
+ Styling
+*/
+body {
+  font: 16px/1.5em "Varta", sans-serif;
+  color: #fff;
+  font-weight: 300;
+  background-color: var(--main-bg-color);
+}
+
+.tabset > label {
+  position: relative;
+  display: inline-block;
+  padding: 15px 15px 25px;
+  border: 1px solid var(--main-bg-color);
+  border-bottom: 0;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.tabset > label::after {
+  content: "";
+  position: absolute;
+  left: 15px;
+  bottom: 10px;
+  width: 22px;
+  height: 4px;
+  background: #fff;
+}
+
+input:focus-visible + label {
+  outline: 2px solid var(--main-line-color);
+  border-radius: 3px;
+  transition: .3s ease-in-out;
+}
+
+.tabset > label:hover,
+.tabset > input:focus + label,
+.tabset > input:checked + label {
+  color:var(--green-color-font);
+  transition: .3s ease-in-out;
+
+}
+
+.tabset > label:hover::after,
+.tabset > input:focus + label::after,
+.tabset > input:checked + label::after {
+  background:var(--green-color-font);
+  /* transition: .3s ease-in-out; */
+}
+
+.tabset > input:checked + label {
+  border-color: var(--main-line-color);
+  border-bottom: 1px solid var(--main-bg-color); 
+  margin-bottom: -1px;
+  transition: .3s ease-in-out;
+}
+
+.tab-panel {
+  padding: 30px 0;
+  border-top: 1px solid var(--main-line-color);
+  z-index: 10;
+}
+
+@media (min-width: 2000px) {
+  .Layout {
+    max-width: 1760px;
+  }
+}
+@media (min-width: 1750px) {
+  .Layout {
+    max-width: 1560px;
+  }
+}
+@media (min-width: 1400px) {
+  .Layout {
+    max-width: 1360px;
+  }
+}
+@media (min-width: 1100px) {
+  .Layout {
+    max-width: 1060px;
+  }
+}
