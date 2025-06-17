@@ -9,57 +9,56 @@
 }
 
 /* Ignore the styles before this comment. Copy from here on */
-.tabs {
+/* -------------------------------------------------------------------- */
+/*            profile container styles                                  */
+/* -------------------------------------------------------------------- */
+/* Container: flex row by default */
+.profile-container {
   display: flex;
-  width: 100%;
-  gap: 1rem;
-  justify-content: flex-end;
+  align-items: center;
+  /* optional: limit the container's max width and center it */
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.tabs > .nav {
-  position: relative;
+/* The square profile image */
+.profile-image {
+  width: 112px;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Text section next to the image */
+.profile-text {
+  margin-left: 20px;
+}
+
+.profile-text h2 {
+  margin: 0 0 10px;
+  font-family: "EB Garamond", serif;
+  font-weight: 400;
+  font-size: 50px;
+  color: #8FD2C9;
+}
+
+.profile-text p {
+  margin: 0;
   font-family: "Share Tech", sans-serif;
   font-weight: 400;
-  margin-top: 10px;
-  padding: 4px 6px;
-  border: 1px solid #edf3d9;
-  border-radius: 10px;
-  color: #edf3d9;
-  opacity: 70%;
-  background-color: #000;
-  z-index: 20;
+  color: #EAF0CE;
 }
 
-.tabs > .nav:hover {
-  cursor: pointer;
-  transform: scale(1.1);
-  z-index: 30;
-}
-
-:has(#tab-wheat-prod:checked) [for="tab-wheat-prod"],
-:has(#tab-wheat-exp:checked) [for="tab-wheat-exp"] {
-  cursor: pointer;
-  opacity: 100%;
-  transform: scale(1.1);
-  padding: 4px 6px;
-  z-index: 30;
-}
-
-.content {
-  position: relative;
-  width: 100%;
-  height: calc(100vh - 3rem);
-  padding: 0.5rem;
-  background-color: transparent;
-  z-index: 10;
-}
-
-.content > section {
-  display: none;
-  flex-direction: column;
-}
-
-.content:has([id="tab-wheat-prod"]:checked) > section:nth-child(1),
-.content:has([id="tab-wheat-exp"]:checked) > section:nth-child(2) {
-  display: flex;
+/* On screens narrower than 600px: switch to column */
+@media (max-width: 600px) {
+  .profile-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .profile-text {
+    margin-left: 0;
+    margin-top: 15px;
+  }
 }
