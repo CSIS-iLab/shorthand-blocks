@@ -1,0 +1,64 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:root {
+  background-color: #000;
+}
+
+/* Ignore the styles before this comment. Copy from here on */
+/* -------------------------------------------------------------------- */
+/*            profile container styles                                  */
+/* -------------------------------------------------------------------- */
+/* Container: flex row by default */
+.profile-container {
+  display: flex;
+  align-items: center;
+  /* optional: limit the container's max width and center it */
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* The square profile image */
+.profile-image {
+  width: 112px;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Text section next to the image */
+.profile-text {
+  margin-left: 20px;
+}
+
+.profile-text h2 {
+  margin: 0 0 10px;
+  font-family: "EB Garamond", serif;
+  font-weight: 400;
+  font-size: 50px;
+  color: #8fd2c9;
+}
+
+.profile-text p {
+  margin: 0;
+  font-family: "Share Tech", sans-serif;
+  font-weight: 400;
+  color: #eaf0ce;
+}
+
+/* On screens narrower than 600px: switch to column */
+@media (max-width: 600px) {
+  .profile-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .profile-text {
+    margin-left: 0;
+    margin-top: 15px;
+  }
+}
