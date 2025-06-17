@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buttons mimicking tabs</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<nav class="tabs">
+  <label class="nav" for="tab-wheat-prod">Production</label>
+  <label class="nav" for="tab-wheat-exp">Exports</label>
+</nav>
+<article class="content">
+  <section>
+    <div class="flourish-embed flourish-hierarchy" data-src="visualisation/23633903?39773">
+      <script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/23633903/thumbnail" width="100%" alt="hierarchy visualization" /></noscript>
+    </div>
+  </section>
+  <section>
+    <div class="flourish-embed flourish-hierarchy" data-src="visualisation/23633929?39773">
+      <script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/23633929/thumbnail" width="100%" alt="hierarchy visualization" /></noscript>
+    </div>
+  </section>
+  <input type="radio" name="wheat-tabs" id="tab-wheat-prod" hidden checked />
+  <input type="radio" name="wheat-tabs" id="tab-wheat-exp" hidden />
+</article>
+</body>
+
+</html>

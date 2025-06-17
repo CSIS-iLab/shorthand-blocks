@@ -1,0 +1,65 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:root {
+  background-color: #000;
+}
+
+/* Ignore the styles before this comment. Copy from here on */
+.tabs {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.tabs > .nav {
+  position: relative;
+  font-family: "Share Tech", sans-serif;
+  font-weight: 400;
+  margin-top: 10px;
+  padding: 4px 6px;
+  border: 1px solid #edf3d9;
+  border-radius: 10px;
+  color: #edf3d9;
+  opacity: 70%;
+  background-color: #000;
+  z-index: 20;
+}
+
+.tabs > .nav:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  z-index: 30;
+}
+
+:has(#tab-wheat-prod:checked) [for="tab-wheat-prod"],
+:has(#tab-wheat-exp:checked) [for="tab-wheat-exp"] {
+  cursor: pointer;
+  opacity: 100%;
+  transform: scale(1.1);
+  padding: 4px 6px;
+  z-index: 30;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 3rem);
+  padding: 0.5rem;
+  background-color: transparent;
+  z-index: 10;
+}
+
+.content > section {
+  display: none;
+  flex-direction: column;
+}
+
+.content:has([id="tab-wheat-prod"]:checked) > section:nth-child(1),
+.content:has([id="tab-wheat-exp"]:checked) > section:nth-child(2) {
+  display: flex;
+}
